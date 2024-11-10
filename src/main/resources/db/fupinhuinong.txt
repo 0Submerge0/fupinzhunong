@@ -1,0 +1,298 @@
+create table if not exists fupinzhunong.chat
+(
+    id              int auto_increment comment '主键'
+        primary key,
+    yonghu_id       int          null comment '提问用户',
+    chat_issue      varchar(200) null comment '问题',
+    issue_time      timestamp    null comment '问题时间 Search111',
+    chat_reply      varchar(200) null comment '回复',
+    reply_time      timestamp    null comment '回复时间 Search111',
+    zhuangtai_types int(255)     null comment '状态',
+    chat_types      int          null comment '数据类型',
+    insert_time     timestamp    null comment '创建时间'
+)
+    comment '客服聊天' charset = utf8;
+
+create table if not exists fupinzhunong.config
+(
+    id    bigint auto_increment comment '主键'
+        primary key,
+    name  varchar(100) null comment '配置参数名称',
+    value varchar(100) null comment '配置参数值'
+)
+    comment '配置文件' charset = utf8;
+
+create table if not exists fupinzhunong.dictionary
+(
+    id          bigint auto_increment comment '主键'
+        primary key,
+    dic_code    varchar(200) null comment '字段',
+    dic_name    varchar(200) null comment '字段名',
+    code_index  int          null comment '编码',
+    index_name  varchar(200) null comment '编码名字  Search111 ',
+    super_id    int          null comment '父字段id',
+    beizhu      varchar(200) null comment '备注',
+    create_time timestamp    null comment '创建时间'
+)
+    comment '字典' charset = utf8;
+
+create table if not exists fupinzhunong.forum
+(
+    id                int auto_increment comment '主键'
+        primary key,
+    forum_name        varchar(200) null comment '帖子标题  Search111 ',
+    yonghu_id         int          null comment '用户',
+    users_id          int          null comment '管理员',
+    forum_content     longtext     null comment '发布内容',
+    super_ids         int          null comment '父id',
+    forum_state_types int          null comment '帖子状态',
+    insert_time       timestamp    null comment '发帖时间',
+    update_time       timestamp    null comment '修改时间',
+    create_time       timestamp    null comment '创建时间 show2'
+)
+    comment '论坛' charset = utf8;
+
+create table if not exists fupinzhunong.news
+(
+    id           int auto_increment comment '主键'
+        primary key,
+    news_name    varchar(200) null comment '公告标题  Search111 ',
+    news_types   int          null comment '公告类型  Search111 ',
+    news_photo   varchar(200) null comment '公告图片',
+    insert_time  timestamp    null comment '添加时间',
+    news_content longtext     null comment '公告详情',
+    create_time  timestamp    null comment '创建时间 show1 show2 nameShow'
+)
+    comment '扶贫公告' charset = utf8;
+
+create table if not exists fupinzhunong.renwu
+(
+    id            int auto_increment comment '主键 '
+        primary key,
+    renwu_name    varchar(200)   null comment '任务标题  Search111 ',
+    renwu_photo   varchar(200)   null comment '任务介绍图',
+    renwu_zhiwei  varchar(200)   null comment '职位',
+    renwu_baocou  decimal(10, 2) null comment '报酬',
+    renwu_shijian varchar(200)   null comment '工作时间',
+    renwu_text    longtext       null comment '任务',
+    renwu_time    timestamp      null comment '起止时间',
+    renwu_address varchar(200)   null comment '工作地点',
+    renwu_fuzhenr varchar(200)   null comment '负责人',
+    renwu_phone   varchar(200)   null comment '联系方式',
+    renwu_baoming varchar(200)   null comment '报名信息',
+    renwu_types   int            null comment '任务类型 Search111',
+    jieshu_time   timestamp      null comment '结束时间',
+    zhugtai_types int            null comment '任务状态 Search111',
+    renwu_content longtext       null comment '任务介绍',
+    renwu_delete  int            null comment '逻辑删除',
+    insert_time   timestamp      null comment '发布日期',
+    create_time   timestamp      null comment '创建时间  show1 show2 photoShow homeMain'
+)
+    comment '任务信息' charset = utf8;
+
+create table if not exists fupinzhunong.renwu_yuyue
+(
+    id                      int auto_increment comment '主键'
+        primary key,
+    renwu_id                int       null comment '任务',
+    yonghu_id               int       null comment '用户',
+    renwu_yuyue_yesno_types int       null comment '审核状态 Search111 ',
+    renwu_yuyue_yesno_text  longtext  null comment '审核回复',
+    insert_time             timestamp null comment '申请时间',
+    create_time             timestamp null comment '创建时间 show3 listShow'
+)
+    comment '任务报名' charset = utf8;
+
+create table if not exists fupinzhunong.token
+(
+    id            bigint auto_increment comment '主键'
+        primary key,
+    userid        bigint                              not null comment '管理id',
+    username      varchar(100)                        not null comment '管理名',
+    tablename     varchar(100)                        null comment '表名',
+    role          varchar(100)                        null comment '角色',
+    token         varchar(200)                        not null comment '密码',
+    addtime       timestamp default CURRENT_TIMESTAMP not null comment '新增时间',
+    expiratedtime timestamp default CURRENT_TIMESTAMP not null comment '过期时间'
+)
+    comment 'token表' charset = utf8;
+
+create table if not exists fupinzhunong.users
+(
+    id       bigint auto_increment comment '主键'
+        primary key,
+    username varchar(100)                           not null comment '医院名',
+    password varchar(100)                           not null comment '密码',
+    role     varchar(100) default '管理员'          null comment '角色',
+    addtime  timestamp    default CURRENT_TIMESTAMP not null comment '新增时间'
+)
+    comment '管理员' charset = utf8;
+
+create table if not exists fupinzhunong.xinwen
+(
+    id              int auto_increment comment '主键 '
+        primary key,
+    xinwen_name     varchar(200) null comment '新闻标题  Search111 ',
+    xinwen_photo    varchar(200) null comment '新闻封面',
+    xinwen_video    varchar(200) null comment '视频',
+    xinwen_types    int          null comment '新闻类型 Search111',
+    xinwen_clicknum int          null comment '新闻热度',
+    xinwen_content  longtext     null comment '新闻介绍',
+    xinwen_delete   int          null comment '逻辑删除',
+    insert_time     timestamp    null comment '录入时间',
+    create_time     timestamp    null comment '创建时间  show1 show2 photoShow'
+)
+    comment '新闻信息' charset = utf8;
+
+create table if not exists fupinzhunong.xinwen_collection
+(
+    id                      int auto_increment comment '主键'
+        primary key,
+    xinwen_id               int       null comment '新闻',
+    yonghu_id               int       null comment '用户',
+    xinwen_collection_types int       null comment '类型',
+    insert_time             timestamp null comment '收藏时间',
+    create_time             timestamp null comment '创建时间 show3 photoShow'
+)
+    comment '新闻收藏' charset = utf8;
+
+create table if not exists fupinzhunong.xinwen_liuyan
+(
+    id                 int auto_increment comment '主键'
+        primary key,
+    xinwen_id          int       null comment '新闻',
+    yonghu_id          int       null comment '用户',
+    xinwen_liuyan_text longtext  null comment '留言内容',
+    insert_time        timestamp null comment '留言时间',
+    reply_text         longtext  null comment '回复内容',
+    update_time        timestamp null comment '回复时间',
+    create_time        timestamp null comment '创建时间 show3 listShow'
+)
+    comment '新闻留言' charset = utf8;
+
+create table if not exists fupinzhunong.yonghu
+(
+    id               int auto_increment comment '主键'
+        primary key,
+    username         varchar(200) null comment '账户',
+    password         varchar(200) null comment '密码',
+    yonghu_name      varchar(200) null comment '用户名称 Search111 ',
+    yonghu_phone     varchar(200) null comment '用户手机号',
+    yonghu_id_number varchar(200) null comment '用户身份证号',
+    yonghu_photo     varchar(200) null comment '用户头像',
+    sex_types        int          null comment '性别 Search111',
+    yonghu_age       int          null comment '年龄',
+    yonghu_email     varchar(200) null comment '用户邮箱',
+    yonghu_delete    int          null comment '逻辑删除',
+    insert_time      timestamp    null comment '添加时间',
+    create_time      timestamp    null comment '创建时间'
+)
+    comment '用户' charset = utf8;
+
+
+
+INSERT INTO fupinzhunong.chat (id, yonghu_id, chat_issue, issue_time, chat_reply, reply_time, zhuangtai_types, chat_types, insert_time) VALUES (1, 1, '询问问题', '2023-04-14 15:48:19', null, null, 2, 1, '2023-04-14 15:48:19');
+INSERT INTO fupinzhunong.chat (id, yonghu_id, chat_issue, issue_time, chat_reply, reply_time, zhuangtai_types, chat_types, insert_time) VALUES (2, 1, null, null, '回复问题', '2023-04-14 15:48:42', null, 2, '2023-04-14 15:48:42');
+INSERT INTO fupinzhunong.chat (id, yonghu_id, chat_issue, issue_time, chat_reply, reply_time, zhuangtai_types, chat_types, insert_time) VALUES (3, 1, '你好', '2024-11-09 16:38:09', null, null, 2, 1, '2024-11-09 16:38:09');
+INSERT INTO fupinzhunong.chat (id, yonghu_id, chat_issue, issue_time, chat_reply, reply_time, zhuangtai_types, chat_types, insert_time) VALUES (4, 1, null, null, '请问有什么可以帮助你的', '2024-11-09 16:40:11', null, 2, '2024-11-09 16:40:12');
+
+INSERT INTO fupinzhunong.config (id, name, value) VALUES (1, '小麦', '/upload/1730126574694.png');
+INSERT INTO fupinzhunong.config (id, name, value) VALUES (2, '玉米', '/upload/1730126587079.png');
+INSERT INTO fupinzhunong.config (id, name, value) VALUES (3, '大蒜', '/upload/1730126596990.png');
+
+INSERT INTO fupinzhunong.dictionary (id, dic_code, dic_name, code_index, index_name, super_id, beizhu, create_time) VALUES (1, 'chat_types', '数据类型', 1, '问题', null, null, '2023-04-14 15:15:09');
+INSERT INTO fupinzhunong.dictionary (id, dic_code, dic_name, code_index, index_name, super_id, beizhu, create_time) VALUES (2, 'chat_types', '数据类型', 2, '回复', null, null, '2023-04-14 15:15:09');
+INSERT INTO fupinzhunong.dictionary (id, dic_code, dic_name, code_index, index_name, super_id, beizhu, create_time) VALUES (3, 'zhuangtai_types', '状态', 1, '未回复', null, null, '2023-04-14 15:15:09');
+INSERT INTO fupinzhunong.dictionary (id, dic_code, dic_name, code_index, index_name, super_id, beizhu, create_time) VALUES (4, 'zhuangtai_types', '状态', 2, '已回复', null, null, '2023-04-14 15:15:09');
+INSERT INTO fupinzhunong.dictionary (id, dic_code, dic_name, code_index, index_name, super_id, beizhu, create_time) VALUES (5, 'xinwen_types', '新闻类型', 1, '扶贫计划', null, null, '2023-04-14 15:15:09');
+INSERT INTO fupinzhunong.dictionary (id, dic_code, dic_name, code_index, index_name, super_id, beizhu, create_time) VALUES (6, 'xinwen_types', '新闻类型', 2, '惠农福利', null, null, '2023-04-14 15:15:09');
+INSERT INTO fupinzhunong.dictionary (id, dic_code, dic_name, code_index, index_name, super_id, beizhu, create_time) VALUES (7, 'xinwen_types', '新闻类型', 3, '表彰内容', null, null, '2023-04-14 15:15:09');
+INSERT INTO fupinzhunong.dictionary (id, dic_code, dic_name, code_index, index_name, super_id, beizhu, create_time) VALUES (8, 'xinwen_collection_types', '收藏表类型', 1, '收藏', null, null, '2023-04-14 15:15:09');
+INSERT INTO fupinzhunong.dictionary (id, dic_code, dic_name, code_index, index_name, super_id, beizhu, create_time) VALUES (9, 'renwu_types', '任务类型', 1, '农产品类型', null, null, '2023-04-14 15:15:09');
+INSERT INTO fupinzhunong.dictionary (id, dic_code, dic_name, code_index, index_name, super_id, beizhu, create_time) VALUES (10, 'renwu_types', '任务类型', 2, '志愿者类型', null, null, '2023-04-14 15:15:09');
+INSERT INTO fupinzhunong.dictionary (id, dic_code, dic_name, code_index, index_name, super_id, beizhu, create_time) VALUES (11, 'renwu_types', '任务类型', 3, '扶贫工作类', null, null, '2023-04-14 15:15:09');
+INSERT INTO fupinzhunong.dictionary (id, dic_code, dic_name, code_index, index_name, super_id, beizhu, create_time) VALUES (12, 'zhugtai_types', '任务状态', 1, '未报名', null, null, '2023-04-14 15:15:09');
+INSERT INTO fupinzhunong.dictionary (id, dic_code, dic_name, code_index, index_name, super_id, beizhu, create_time) VALUES (13, 'zhugtai_types', '任务状态', 2, '已报名', null, null, '2023-04-14 15:15:09');
+INSERT INTO fupinzhunong.dictionary (id, dic_code, dic_name, code_index, index_name, super_id, beizhu, create_time) VALUES (14, 'renwu_yuyue_yesno_types', '审核状态', 1, '待审核', null, null, '2023-04-14 15:15:09');
+INSERT INTO fupinzhunong.dictionary (id, dic_code, dic_name, code_index, index_name, super_id, beizhu, create_time) VALUES (15, 'renwu_yuyue_yesno_types', '审核状态', 2, '同意', null, null, '2023-04-14 15:15:09');
+INSERT INTO fupinzhunong.dictionary (id, dic_code, dic_name, code_index, index_name, super_id, beizhu, create_time) VALUES (16, 'renwu_yuyue_yesno_types', '审核状态', 3, '拒绝', null, null, '2023-04-14 15:15:09');
+INSERT INTO fupinzhunong.dictionary (id, dic_code, dic_name, code_index, index_name, super_id, beizhu, create_time) VALUES (17, 'news_types', '公告类型', 1, '县级公告', null, null, '2023-04-14 15:15:09');
+INSERT INTO fupinzhunong.dictionary (id, dic_code, dic_name, code_index, index_name, super_id, beizhu, create_time) VALUES (18, 'news_types', '公告类型', 2, '市级公告', null, null, '2023-04-14 15:15:09');
+INSERT INTO fupinzhunong.dictionary (id, dic_code, dic_name, code_index, index_name, super_id, beizhu, create_time) VALUES (19, 'news_types', '公告类型', 3, '省级公告', null, null, '2023-04-14 15:15:09');
+INSERT INTO fupinzhunong.dictionary (id, dic_code, dic_name, code_index, index_name, super_id, beizhu, create_time) VALUES (20, 'sex_types', '性别类型', 1, '男', null, null, '2023-04-14 15:15:09');
+INSERT INTO fupinzhunong.dictionary (id, dic_code, dic_name, code_index, index_name, super_id, beizhu, create_time) VALUES (21, 'sex_types', '性别类型', 2, '女', null, null, '2023-04-14 15:15:09');
+INSERT INTO fupinzhunong.dictionary (id, dic_code, dic_name, code_index, index_name, super_id, beizhu, create_time) VALUES (22, 'forum_state_types', '帖子状态', 1, '发帖', null, null, '2023-04-14 15:15:09');
+INSERT INTO fupinzhunong.dictionary (id, dic_code, dic_name, code_index, index_name, super_id, beizhu, create_time) VALUES (23, 'forum_state_types', '帖子状态', 2, '回帖', null, null, '2023-04-14 15:15:09');
+
+INSERT INTO fupinzhunong.forum (id, forum_name, yonghu_id, users_id, forum_content, super_ids, forum_state_types, insert_time, update_time, create_time) VALUES (4, '大蒜', 2, null, '<p>我们目前要种大蒜，谁知道哪个地方有买塑料棚的吗</p>', 84, 1, '2023-04-14 15:15:17', '2024-10-28 22:08:56', '2023-04-14 15:15:17');
+INSERT INTO fupinzhunong.forum (id, forum_name, yonghu_id, users_id, forum_content, super_ids, forum_state_types, insert_time, update_time, create_time) VALUES (6, '大蒜丰收', 2, null, '<p>都是优质大蒜，哪个地方收的价钱高一些啊</p>', 19, 1, '2023-04-14 15:15:17', '2024-10-28 22:11:28', '2023-04-14 15:15:17');
+INSERT INTO fupinzhunong.forum (id, forum_name, yonghu_id, users_id, forum_content, super_ids, forum_state_types, insert_time, update_time, create_time) VALUES (7, '花生丰收', 3, null, '<p>有没有收花生的啊，目前花生晒的很好，量也很多，可以大量出售</p>', 367, 1, '2023-04-14 15:15:17', '2024-10-28 22:24:04', '2023-04-14 15:15:17');
+INSERT INTO fupinzhunong.forum (id, forum_name, yonghu_id, users_id, forum_content, super_ids, forum_state_types, insert_time, update_time, create_time) VALUES (8, '花生提问', 3, null, '<p>我们家的花生长势不好，拔出来还很少，这是需要施肥吗？</p>', 397, 1, '2023-04-14 15:15:17', '2024-10-28 22:23:12', '2023-04-14 15:15:17');
+INSERT INTO fupinzhunong.forum (id, forum_name, yonghu_id, users_id, forum_content, super_ids, forum_state_types, insert_time, update_time, create_time) VALUES (9, '玉米提问', 1, null, '<p>我们家的玉米为什么长的不好啊，又小，又没数量，这是怎么一回事啊，大家伙帮忙看看</p>', 363, 1, '2023-04-14 15:15:17', '2024-10-28 22:17:49', '2023-04-14 15:15:17');
+INSERT INTO fupinzhunong.forum (id, forum_name, yonghu_id, users_id, forum_content, super_ids, forum_state_types, insert_time, update_time, create_time) VALUES (10, '收玉米', 1, null, '<p>谁家的收玉米机器空闲啊，来我们这收一下</p>', 320, 1, '2023-04-14 15:15:17', '2024-10-28 22:16:35', '2023-04-14 15:15:17');
+INSERT INTO fupinzhunong.forum (id, forum_name, yonghu_id, users_id, forum_content, super_ids, forum_state_types, insert_time, update_time, create_time) VALUES (11, '晒小麦', 3, null, '<p>眼看着收完小麦了，怎么这几天一直下雨啊，都没办法好好晒小麦了，小麦价钱现在是个什么情况啊</p>', 154, 1, '2023-04-14 15:15:17', '2024-10-28 22:22:07', '2023-04-14 15:15:17');
+INSERT INTO fupinzhunong.forum (id, forum_name, yonghu_id, users_id, forum_content, super_ids, forum_state_types, insert_time, update_time, create_time) VALUES (12, '玉米种植', 1, null, '<p>求助，种玉米的哪家种子好啊，货比三家感觉都还行，老丝儿们都买的哪家的啊</p>', 166, 1, '2023-04-14 15:15:17', '2024-10-28 22:15:27', '2023-04-14 15:15:17');
+INSERT INTO fupinzhunong.forum (id, forum_name, yonghu_id, users_id, forum_content, super_ids, forum_state_types, insert_time, update_time, create_time) VALUES (13, '种蒜求助', 2, null, '<p>种大蒜的机器怎么用啊，谁教一下</p>', 493, 1, '2023-04-14 15:15:17', '2024-10-28 22:12:18', '2023-04-14 15:15:17');
+INSERT INTO fupinzhunong.forum (id, forum_name, yonghu_id, users_id, forum_content, super_ids, forum_state_types, insert_time, update_time, create_time) VALUES (15, null, null, 1, '11111111111111111', 14, 2, '2023-04-14 15:49:38', null, '2023-04-14 15:49:38');
+INSERT INTO fupinzhunong.forum (id, forum_name, yonghu_id, users_id, forum_content, super_ids, forum_state_types, insert_time, update_time, create_time) VALUES (16, null, 1, null, '用户登录后能删除自己添加的帖子和帖子评论', 14, 2, '2023-04-14 15:50:04', null, '2023-04-14 15:50:04');
+INSERT INTO fupinzhunong.forum (id, forum_name, yonghu_id, users_id, forum_content, super_ids, forum_state_types, insert_time, update_time, create_time) VALUES (20, null, null, 1, '先这样再那样最后再这样就可以了，不用谢', 13, 2, '2024-10-28 22:13:35', null, '2024-10-28 22:13:35');
+
+INSERT INTO fupinzhunong.news (id, news_name, news_types, news_photo, insert_time, news_content, create_time) VALUES (5, '唐河县最新公告', 1, 'upload/news5.jpg', '2023-04-14 15:15:17', '<p>唐河县根据党中央发布的政策，继而进行落实，先公布以下惠农政策</p><p>1、xxx</p><p>2、xxx</p><p>3、xxx</p>', '2023-04-14 15:15:17');
+INSERT INTO fupinzhunong.news (id, news_name, news_types, news_photo, insert_time, news_content, create_time) VALUES (6, '南阳市最新公告', 2, 'upload/news6.jpg', '2023-04-14 15:15:17', '<p>南阳市政府对各个县发布以下惠农政策</p><p>1、xxx</p><p>2、xxx</p><p>3、xxx</p>', '2023-04-14 15:15:17');
+INSERT INTO fupinzhunong.news (id, news_name, news_types, news_photo, insert_time, news_content, create_time) VALUES (7, '河南省最新公告', 3, 'upload/news7.jpg', '2023-04-14 15:15:17', '<p>由于近年来，农作物被人们忽视，很多人不明白农民爷爷的辛苦继而浪费粮食，国家发布多条政策进行整改</p><p>1、xxx</p><p>2、xxx</p><p>3、xxx</p>', '2023-04-14 15:15:17');
+
+INSERT INTO fupinzhunong.renwu (id, renwu_name, renwu_photo, renwu_zhiwei, renwu_baocou, renwu_shijian, renwu_text, renwu_time, renwu_address, renwu_fuzhenr, renwu_phone, renwu_baoming, renwu_types, jieshu_time, zhugtai_types, renwu_content, renwu_delete, insert_time, create_time) VALUES (3, '志愿者招募', 'upload/renwu3.jpg', '志愿者', 0.00, '8:00-12:00/2:00-6:00', '帮助农民进行社会实践', '2024-11-16 00:00:00', '王家屯', '王五', '17703786903', '姓名+手机号+学习', 2, '2024-11-18 00:00:00', 2, '<p>为了响应国家号召，对大学生提供社会实践的职位，现有王家屯职位，帮助农民进行种植农作物的社会实践</p>', 1, '2023-04-14 15:15:17', '2023-04-14 15:15:17');
+INSERT INTO fupinzhunong.renwu (id, renwu_name, renwu_photo, renwu_zhiwei, renwu_baocou, renwu_shijian, renwu_text, renwu_time, renwu_address, renwu_fuzhenr, renwu_phone, renwu_baoming, renwu_types, jieshu_time, zhugtai_types, renwu_content, renwu_delete, insert_time, create_time) VALUES (12, '整理扶贫材料', 'upload/renwu12.jpg', '文职', 100.00, '8:00-12:00/2:00-6:00', '整理扶贫材料', '2024-11-09 00:00:00', '李家屯乡政府', '李四', '13788888888', '姓名+手机号+身份证', 3, '2024-11-10 00:00:00', 1, '<p>需要会熟练使用电脑，帮助政府人员进行扶贫工作的录入和整理</p>', 1, '2023-04-14 15:15:17', '2023-04-14 15:15:17');
+INSERT INTO fupinzhunong.renwu (id, renwu_name, renwu_photo, renwu_zhiwei, renwu_baocou, renwu_shijian, renwu_text, renwu_time, renwu_address, renwu_fuzhenr, renwu_phone, renwu_baoming, renwu_types, jieshu_time, zhugtai_types, renwu_content, renwu_delete, insert_time, create_time) VALUES (13, '大蒜种植', 'upload/renwu13.jpg', '扶贫工作者', 300.00, '8:00-12:00/2:00-6:00', '种植农产品', '2024-11-02 15:15:17', '李家屯', '张三', '16699999999', '姓名+手机号', 1, '2024-11-03 15:15:17', 2, '<p>帮助农民进行种植大蒜</p><p>只需一人</p>', 1, '2023-04-14 15:15:17', '2023-04-14 15:15:17');
+INSERT INTO fupinzhunong.renwu (id, renwu_name, renwu_photo, renwu_zhiwei, renwu_baocou, renwu_shijian, renwu_text, renwu_time, renwu_address, renwu_fuzhenr, renwu_phone, renwu_baoming, renwu_types, jieshu_time, zhugtai_types, renwu_content, renwu_delete, insert_time, create_time) VALUES (14, '招募志愿者', 'upload/renwu1.jpg', '志愿者', 0.00, '9:00-12:00/2:00-5:00', '材料类型', '2024-11-11 15:15:17', '石嘴山市政府', '张萌哲', '16688888888', '报名信息14', 2, '2024-11-11 00:00:00', 1, '<p>帮助市政府整理扶贫资料</p>', 1, '2023-04-14 15:15:17', '2023-04-14 15:15:17');
+
+INSERT INTO fupinzhunong.renwu_yuyue (id, renwu_id, yonghu_id, renwu_yuyue_yesno_types, renwu_yuyue_yesno_text, insert_time, create_time) VALUES (17, 3, 1, 2, '注意大学生的言行举止', '2024-11-10 16:55:48', '2024-11-10 16:55:48');
+INSERT INTO fupinzhunong.renwu_yuyue (id, renwu_id, yonghu_id, renwu_yuyue_yesno_types, renwu_yuyue_yesno_text, insert_time, create_time) VALUES (18, 13, 2, 2, '加油！做事情积极一些', '2024-11-10 16:56:20', '2024-11-10 16:56:20');
+INSERT INTO fupinzhunong.renwu_yuyue (id, renwu_id, yonghu_id, renwu_yuyue_yesno_types, renwu_yuyue_yesno_text, insert_time, create_time) VALUES (19, 12, 3, 1, null, '2024-11-10 16:56:54', '2024-11-10 16:56:54');
+INSERT INTO fupinzhunong.renwu_yuyue (id, renwu_id, yonghu_id, renwu_yuyue_yesno_types, renwu_yuyue_yesno_text, insert_time, create_time) VALUES (20, 13, 1, 3, '人数已满', '2024-11-10 16:59:38', '2024-11-10 16:59:38');
+
+INSERT INTO fupinzhunong.token (id, userid, username, tablename, role, token, addtime, expiratedtime) VALUES (1, 1, 'a1', 'yonghu', '用户', '5xkcmub7ajcs8e9rmrf60xqqc9xe0ghl', '2023-04-14 15:19:36', '2024-11-10 17:59:08');
+INSERT INTO fupinzhunong.token (id, userid, username, tablename, role, token, addtime, expiratedtime) VALUES (2, 1, 'admin', 'users', '管理员', 'ialbevrxeaftezc9o477nk67ge7a75iw', '2023-04-14 15:48:26', '2024-11-10 18:00:00');
+INSERT INTO fupinzhunong.token (id, userid, username, tablename, role, token, addtime, expiratedtime) VALUES (3, 2, 'a2', 'yonghu', '用户', '9pi8as3mna0of8jszls4n9143bu661os', '2024-11-10 16:56:06', '2024-11-10 17:56:06');
+INSERT INTO fupinzhunong.token (id, userid, username, tablename, role, token, addtime, expiratedtime) VALUES (4, 3, 'a3', 'yonghu', '用户', 'jsw3wzuw99ki4td6ltx55bwia6vs8mhj', '2024-11-10 16:56:41', '2024-11-10 17:56:42');
+
+INSERT INTO fupinzhunong.users (id, username, password, role, addtime) VALUES (1, 'admin', 'admin', '管理员', '2023-04-14 15:15:09');
+
+INSERT INTO fupinzhunong.xinwen (id, xinwen_name, xinwen_photo, xinwen_video, xinwen_types, xinwen_clicknum, xinwen_content, xinwen_delete, insert_time, create_time) VALUES (1, '每日新闻', 'upload/news1.jpg', 'upload/video.mp4', 2, 254, '<p>昨日李四同志五吨小麦全部卖出，大家多多关注</p>', 1, '2023-04-14 15:15:17', '2023-04-14 15:15:17');
+INSERT INTO fupinzhunong.xinwen (id, xinwen_name, xinwen_photo, xinwen_video, xinwen_types, xinwen_clicknum, xinwen_content, xinwen_delete, insert_time, create_time) VALUES (2, '每日新闻', 'upload/news2.jpg', 'upload/video.mp4', 2, 123, '<p>今日四村农民李四，滞留五吨小麦，如有有需要的，请联系：</p><p>0000-8888-000</p>', 1, '2023-04-14 15:15:17', '2023-04-14 15:15:17');
+INSERT INTO fupinzhunong.xinwen (id, xinwen_name, xinwen_photo, xinwen_video, xinwen_types, xinwen_clicknum, xinwen_content, xinwen_delete, insert_time, create_time) VALUES (3, '政策福利', 'upload/news3.jpg', 'upload/video.mp4', 1, 427, '<p>如果有农作物滞销的，先可以拨打以下电话进行促销，下列皆是国家企业进行高价回收滞销农产品</p><p><br></p><p>16688888888  主收西红柿</p><p>16699999999  主收土豆</p><p>16600000000  主收大蒜</p>', 1, '2023-04-14 15:15:17', '2023-04-14 15:15:17');
+INSERT INTO fupinzhunong.xinwen (id, xinwen_name, xinwen_photo, xinwen_video, xinwen_types, xinwen_clicknum, xinwen_content, xinwen_delete, insert_time, create_time) VALUES (4, '政策更改', 'upload/news4.jpg', 'upload/video.mp4', 1, 461, '<p>央视发布，现在可去各乡政府进行农作物种子的领取，更好的发展农作物</p>', 1, '2023-04-14 15:15:17', '2023-04-14 15:15:17');
+INSERT INTO fupinzhunong.xinwen (id, xinwen_name, xinwen_photo, xinwen_video, xinwen_types, xinwen_clicknum, xinwen_content, xinwen_delete, insert_time, create_time) VALUES (5, '有关助农发展政策', 'upload/news5.jpg', 'upload/video.mp4', 1, 71, '<p>先通知，种地将得到补贴，每亩地补贴xxx元，呼吁大家多多关注农产品</p>', 1, '2023-04-14 15:15:17', '2023-04-14 15:15:17');
+INSERT INTO fupinzhunong.xinwen (id, xinwen_name, xinwen_photo, xinwen_video, xinwen_types, xinwen_clicknum, xinwen_content, xinwen_delete, insert_time, create_time) VALUES (6, '大蒜价格实况', 'upload/news6.jpg', 'upload/video.mp4', 2, 58, '<p>前几年大蒜价格上涨厉害，近两年将迎来价格低谷期</p>', 1, '2023-04-14 15:15:17', '2023-04-14 15:15:17');
+INSERT INTO fupinzhunong.xinwen (id, xinwen_name, xinwen_photo, xinwen_video, xinwen_types, xinwen_clicknum, xinwen_content, xinwen_delete, insert_time, create_time) VALUES (7, '鸡蛋降价', 'upload/news7.jpg', 'upload/video.mp4', 2, 275, '<p>鸡蛋迎来低估，各个地方的鸡蛋将迎来近几年最低价格</p>', 1, '2023-04-14 15:15:17', '2023-04-14 15:15:17');
+INSERT INTO fupinzhunong.xinwen (id, xinwen_name, xinwen_photo, xinwen_video, xinwen_types, xinwen_clicknum, xinwen_content, xinwen_delete, insert_time, create_time) VALUES (8, '有关三村表彰', 'upload/news8.jpg', 'upload/video.mp4', 3, 164, '<p>三村张三同志，经过多方联系，将自己和旁边几个村的农产品全部销售出去，给予表彰</p>', 1, '2023-04-14 15:15:17', '2023-04-14 15:15:17');
+INSERT INTO fupinzhunong.xinwen (id, xinwen_name, xinwen_photo, xinwen_video, xinwen_types, xinwen_clicknum, xinwen_content, xinwen_delete, insert_time, create_time) VALUES (9, '西红柿价格变更', 'upload/news9.jpg', 'upload/video.mp4', 2, 277, '<p>今日西红柿价格迎来春天，价格上涨，手里农产品将能以更好的价格卖出</p>', 1, '2023-04-14 15:15:17', '2023-04-14 15:15:17');
+INSERT INTO fupinzhunong.xinwen (id, xinwen_name, xinwen_photo, xinwen_video, xinwen_types, xinwen_clicknum, xinwen_content, xinwen_delete, insert_time, create_time) VALUES (10, '表彰大会', 'upload/news10.jpg', 'upload/video.mp4', 3, 244, '<p>二村小李，将其村里滞销农产品全部卖出，在其县进行表彰，大家以此为榜样</p>', 1, '2023-04-14 15:15:17', '2023-04-14 15:15:17');
+INSERT INTO fupinzhunong.xinwen (id, xinwen_name, xinwen_photo, xinwen_video, xinwen_types, xinwen_clicknum, xinwen_content, xinwen_delete, insert_time, create_time) VALUES (11, '土豆价格变更', 'upload/news11.jpg', 'upload/video.mp4', 2, 341, '<p>今日有关土豆价格涨幅的说明</p>', 1, '2023-04-14 15:15:17', '2023-04-14 15:15:17');
+INSERT INTO fupinzhunong.xinwen (id, xinwen_name, xinwen_photo, xinwen_video, xinwen_types, xinwen_clicknum, xinwen_content, xinwen_delete, insert_time, create_time) VALUES (12, '扶贫政策', 'upload/news12.jpg', 'upload/video.mp4', 1, 354, '<p>有关帮助农民售卖滞销农产品的决策</p>', 1, '2023-04-14 15:15:17', '2023-04-14 15:15:17');
+INSERT INTO fupinzhunong.xinwen (id, xinwen_name, xinwen_photo, xinwen_video, xinwen_types, xinwen_clicknum, xinwen_content, xinwen_delete, insert_time, create_time) VALUES (13, '小帅荣誉表彰', 'upload/news13.jpg', 'upload/video.mp4', 3, 166, '<p>关于小帅推动农业发展表彰大会</p>', 1, '2023-04-14 15:15:17', '2023-04-14 15:15:17');
+INSERT INTO fupinzhunong.xinwen (id, xinwen_name, xinwen_photo, xinwen_video, xinwen_types, xinwen_clicknum, xinwen_content, xinwen_delete, insert_time, create_time) VALUES (14, '党的二十大顺利召开', 'upload/news14.jpg', 'upload/video.mp4', 1, 421, '<p>党的二十大顺利召开</p>', 1, '2023-04-14 15:15:17', '2023-04-14 15:15:17');
+
+INSERT INTO fupinzhunong.xinwen_collection (id, xinwen_id, yonghu_id, xinwen_collection_types, insert_time, create_time) VALUES (1, 1, 3, 1, '2023-04-14 15:15:17', '2023-04-14 15:15:17');
+INSERT INTO fupinzhunong.xinwen_collection (id, xinwen_id, yonghu_id, xinwen_collection_types, insert_time, create_time) VALUES (2, 2, 3, 1, '2023-04-14 15:15:17', '2023-04-14 15:15:17');
+INSERT INTO fupinzhunong.xinwen_collection (id, xinwen_id, yonghu_id, xinwen_collection_types, insert_time, create_time) VALUES (3, 3, 1, 1, '2023-04-14 15:15:17', '2023-04-14 15:15:17');
+INSERT INTO fupinzhunong.xinwen_collection (id, xinwen_id, yonghu_id, xinwen_collection_types, insert_time, create_time) VALUES (4, 4, 3, 1, '2023-04-14 15:15:17', '2023-04-14 15:15:17');
+INSERT INTO fupinzhunong.xinwen_collection (id, xinwen_id, yonghu_id, xinwen_collection_types, insert_time, create_time) VALUES (5, 5, 2, 1, '2023-04-14 15:15:17', '2023-04-14 15:15:17');
+INSERT INTO fupinzhunong.xinwen_collection (id, xinwen_id, yonghu_id, xinwen_collection_types, insert_time, create_time) VALUES (6, 6, 3, 1, '2023-04-14 15:15:17', '2023-04-14 15:15:17');
+INSERT INTO fupinzhunong.xinwen_collection (id, xinwen_id, yonghu_id, xinwen_collection_types, insert_time, create_time) VALUES (11, 11, 1, 1, '2023-04-14 15:15:17', '2023-04-14 15:15:17');
+INSERT INTO fupinzhunong.xinwen_collection (id, xinwen_id, yonghu_id, xinwen_collection_types, insert_time, create_time) VALUES (12, 12, 2, 1, '2023-04-14 15:15:17', '2023-04-14 15:15:17');
+INSERT INTO fupinzhunong.xinwen_collection (id, xinwen_id, yonghu_id, xinwen_collection_types, insert_time, create_time) VALUES (13, 13, 1, 1, '2023-04-14 15:15:17', '2023-04-14 15:15:17');
+
+INSERT INTO fupinzhunong.xinwen_liuyan (id, xinwen_id, yonghu_id, xinwen_liuyan_text, insert_time, reply_text, update_time, create_time) VALUES (1, 1, 2, '国家的政策力度很大', '2023-04-14 15:15:17', '希望大家越来越好', '2024-10-28 22:36:20', '2023-04-14 15:15:17');
+INSERT INTO fupinzhunong.xinwen_liuyan (id, xinwen_id, yonghu_id, xinwen_liuyan_text, insert_time, reply_text, update_time, create_time) VALUES (5, 5, 1, '感谢国家，农民的日子越来越好了', '2023-04-14 15:15:17', '一同进步！！', '2024-10-28 22:35:36', '2023-04-14 15:15:17');
+INSERT INTO fupinzhunong.xinwen_liuyan (id, xinwen_id, yonghu_id, xinwen_liuyan_text, insert_time, reply_text, update_time, create_time) VALUES (12, 12, 3, '有了这些政策，农民也能过上好日子了', '2023-04-14 15:15:17', '永远跟党走！！', '2024-10-28 22:35:42', '2023-04-14 15:15:17');
+INSERT INTO fupinzhunong.xinwen_liuyan (id, xinwen_id, yonghu_id, xinwen_liuyan_text, insert_time, reply_text, update_time, create_time) VALUES (13, 13, 1, '以此为榜样', '2023-04-14 15:15:17', '加油！！', '2024-10-28 22:35:46', '2023-04-14 15:15:17');
+
+INSERT INTO fupinzhunong.yonghu (id, username, password, yonghu_name, yonghu_phone, yonghu_id_number, yonghu_photo, sex_types, yonghu_age, yonghu_email, yonghu_delete, insert_time, create_time) VALUES (1, 'a1', '123456', '小美', '17703786901', '410224199010102001', '/upload/1730122449100.png', 2, 18, '1@qq.com', 1, '2023-04-14 15:15:17', '2023-04-14 15:15:17');
+INSERT INTO fupinzhunong.yonghu (id, username, password, yonghu_name, yonghu_phone, yonghu_id_number, yonghu_photo, sex_types, yonghu_age, yonghu_email, yonghu_delete, insert_time, create_time) VALUES (2, 'a2', '123456', '小红', '17703786902', '410224199010102002', 'upload/yonghu2.jpg', 2, 88, '2@qq.com', 1, '2023-04-14 15:15:17', '2023-04-14 15:15:17');
+INSERT INTO fupinzhunong.yonghu (id, username, password, yonghu_name, yonghu_phone, yonghu_id_number, yonghu_photo, sex_types, yonghu_age, yonghu_email, yonghu_delete, insert_time, create_time) VALUES (3, 'a3', '123456', '小明', '17703786903', '410224199010102003', '/upload/1730122476293.jpg', 1, 18, '3@qq.com', 1, '2023-04-14 15:15:17', '2023-04-14 15:15:17');
+
+
+
+
+
