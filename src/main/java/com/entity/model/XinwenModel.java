@@ -10,7 +10,7 @@ import java.io.Serializable;
 
 
 /**
- * 新闻信息
+ * 惠农推介
  * 接收传参的实体类
  *（实际开发中配合移动端接口开发手动去掉些没用的字段， 后端一般用entity就够用了）
  * 取自ModelAndView 的model名称
@@ -28,13 +28,13 @@ public class XinwenModel implements Serializable {
 
 
     /**
-     * 新闻标题
+     * 惠农推介标题
      */
     private String xinwenName;
 
 
     /**
-     * 新闻封面
+     * 惠农推介封面
      */
     private String xinwenPhoto;
 
@@ -46,19 +46,19 @@ public class XinwenModel implements Serializable {
 
 
     /**
-     * 新闻类型
+     * 惠农推介类型
      */
     private Integer xinwenTypes;
 
 
     /**
-     * 新闻热度
+     * 惠农推介热度
      */
     private Integer xinwenClicknum;
 
 
     /**
-     * 新闻介绍
+     * 惠农推介介绍
      */
     private String xinwenContent;
 
@@ -100,7 +100,7 @@ public class XinwenModel implements Serializable {
         this.id = id;
     }
     /**
-	 * 获取：新闻标题
+	 * 获取：惠农推介标题
 	 */
     public String getXinwenName() {
         return xinwenName;
@@ -108,13 +108,13 @@ public class XinwenModel implements Serializable {
 
 
     /**
-	 * 设置：新闻标题
+	 * 设置：惠农推介标题
 	 */
     public void setXinwenName(String xinwenName) {
         this.xinwenName = xinwenName;
     }
     /**
-	 * 获取：新闻封面
+	 * 获取：惠农推介封面
 	 */
     public String getXinwenPhoto() {
         return xinwenPhoto;
@@ -122,7 +122,7 @@ public class XinwenModel implements Serializable {
 
 
     /**
-	 * 设置：新闻封面
+	 * 设置：惠农推介封面
 	 */
     public void setXinwenPhoto(String xinwenPhoto) {
         this.xinwenPhoto = xinwenPhoto;
@@ -142,7 +142,7 @@ public class XinwenModel implements Serializable {
         this.xinwenVideo = xinwenVideo;
     }
     /**
-	 * 获取：新闻类型
+	 * 获取：惠农推介类型
 	 */
     public Integer getXinwenTypes() {
         return xinwenTypes;
@@ -150,13 +150,13 @@ public class XinwenModel implements Serializable {
 
 
     /**
-	 * 设置：新闻类型
+	 * 设置：惠农推介类型
 	 */
     public void setXinwenTypes(Integer xinwenTypes) {
         this.xinwenTypes = xinwenTypes;
     }
     /**
-	 * 获取：新闻热度
+	 * 获取：惠农推介热度
 	 */
     public Integer getXinwenClicknum() {
         return xinwenClicknum;
@@ -164,13 +164,13 @@ public class XinwenModel implements Serializable {
 
 
     /**
-	 * 设置：新闻热度
+	 * 设置：惠农推介热度
 	 */
     public void setXinwenClicknum(Integer xinwenClicknum) {
         this.xinwenClicknum = xinwenClicknum;
     }
     /**
-	 * 获取：新闻介绍
+	 * 获取：惠农推介介绍
 	 */
     public String getXinwenContent() {
         return xinwenContent;
@@ -178,7 +178,7 @@ public class XinwenModel implements Serializable {
 
 
     /**
-	 * 设置：新闻介绍
+	 * 设置：惠农推介介绍
 	 */
     public void setXinwenContent(String xinwenContent) {
         this.xinwenContent = xinwenContent;

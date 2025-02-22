@@ -10,7 +10,7 @@ import org.springframework.format.annotation.DateTimeFormat;
 import java.io.Serializable;
 
 /**
- * 新闻留言
+ * 惠农推介留言
  * 手机端接口返回实体辅助类
  * （主要作用去除一些不必要的字段）
  */
@@ -28,7 +28,7 @@ public class XinwenLiuyanVO implements Serializable {
 
 
     /**
-     * 新闻
+     * 惠农推介
      */
 
     @TableField(value = "xinwen_id")
@@ -105,7 +105,7 @@ public class XinwenLiuyanVO implements Serializable {
         this.id = id;
     }
     /**
-	 * 设置：新闻
+	 * 设置：惠农推介
 	 */
     public Integer getXinwenId() {
         return xinwenId;
@@ -113,7 +113,7 @@ public class XinwenLiuyanVO implements Serializable {
 
 
     /**
-	 * 获取：新闻
+	 * 获取：惠农推介
 	 */
 
     public void setXinwenId(Integer xinwenId) {

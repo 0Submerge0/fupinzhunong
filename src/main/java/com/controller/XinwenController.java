@@ -33,7 +33,7 @@ import com.utils.R;
 import com.alibaba.fastjson.*;
 
 /**
- * 新闻信息
+ * 惠农推介
  * 后端接口
  * @author
  * @email
@@ -66,9 +66,9 @@ public class XinwenController {
     @Autowired
     private RenwuYuyueService renwuYuyueService;//任务报名
     @Autowired
-    private XinwenCollectionService xinwenCollectionService;//新闻收藏
+    private XinwenCollectionService xinwenCollectionService;//惠农推介收藏
     @Autowired
-    private XinwenLiuyanService xinwenLiuyanService;//新闻留言
+    private XinwenLiuyanService xinwenLiuyanService;//惠农推介留言
     @Autowired
     private YonghuService yonghuService;//用户
     @Autowired
@@ -228,11 +228,11 @@ public class XinwenController {
                         for(List<String> data:dataList){
                             //循环
                             XinwenEntity xinwenEntity = new XinwenEntity();
-//                            xinwenEntity.setXinwenName(data.get(0));                    //新闻标题 要改的
+//                            xinwenEntity.setXinwenName(data.get(0));                    //惠农推介标题 要改的
 //                            xinwenEntity.setXinwenPhoto("");//详情和图片
 //                            xinwenEntity.setXinwenVideo(data.get(0));                    //视频 要改的
-//                            xinwenEntity.setXinwenTypes(Integer.valueOf(data.get(0)));   //新闻类型 要改的
-//                            xinwenEntity.setXinwenClicknum(Integer.valueOf(data.get(0)));   //新闻热度 要改的
+//                            xinwenEntity.setXinwenTypes(Integer.valueOf(data.get(0)));   //惠农推介类型 要改的
+//                            xinwenEntity.setXinwenClicknum(Integer.valueOf(data.get(0)));   //惠农推介热度 要改的
 //                            xinwenEntity.setXinwenContent("");//详情和图片
 //                            xinwenEntity.setXinwenDelete(1);//逻辑删除字段
 //                            xinwenEntity.setInsertTime(date);//时间

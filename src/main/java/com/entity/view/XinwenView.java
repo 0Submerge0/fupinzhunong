@@ -13,7 +13,7 @@ import java.util.Date;
 import com.utils.DateUtil;
 
 /**
-* 新闻信息
+* 惠农推介
 * 后端返回视图实体辅助类
 * （通常后端关联的表或者自定义的字段需要返回使用）
 */
@@ -23,9 +23,9 @@ public class XinwenView extends XinwenEntity implements Serializable {
 
 	//当前表
 	/**
-	* 新闻类型的值
+	* 惠农推介类型的值
 	*/
-	@ColumnInfo(comment="新闻类型的字典表值",type="varchar(200)")
+	@ColumnInfo(comment="惠农推介类型的字典表值",type="varchar(200)")
 	private String xinwenValue;
 
 
@@ -48,13 +48,13 @@ public class XinwenView extends XinwenEntity implements Serializable {
 
 	//当前表的
 	/**
-	* 获取： 新闻类型的值
+	* 获取： 惠农推介类型的值
 	*/
 	public String getXinwenValue() {
 		return xinwenValue;
 	}
 	/**
-	* 设置： 新闻类型的值
+	* 设置： 惠农推介类型的值
 	*/
 	public void setXinwenValue(String xinwenValue) {
 		this.xinwenValue = xinwenValue;

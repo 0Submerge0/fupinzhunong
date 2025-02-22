@@ -78,7 +78,7 @@
                 and a.update_time = #{params.updateTime}
             </if>
 
-                <!-- 判断新闻信息的id不为空 -->
+                <!-- 判断惠农推介的id不为空 -->
             <if test=" params.xinwenIdNotNull != '' and params.xinwenIdNotNull != null and params.xinwenIdNotNull != 'null' ">
                 and a.xinwen_id IS NOT NULL
             </if>

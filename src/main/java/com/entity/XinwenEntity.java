@@ -19,7 +19,7 @@ import com.utils.DateUtil;
 
 
 /**
- * 新闻信息
+ * 惠农推介
  *
  * @author 
  * @email
@@ -54,18 +54,18 @@ public class XinwenEntity<T> implements Serializable {
 
 
     /**
-     * 新闻标题
+     * 惠农推介标题
      */
-    @ColumnInfo(comment="新闻标题",type="varchar(200)")
+    @ColumnInfo(comment="惠农推介标题",type="varchar(200)")
     @TableField(value = "xinwen_name")
 
     private String xinwenName;
 
 
     /**
-     * 新闻封面
+     * 惠农推介封面
      */
-    @ColumnInfo(comment="新闻封面",type="varchar(200)")
+    @ColumnInfo(comment="惠农推介封面",type="varchar(200)")
     @TableField(value = "xinwen_photo")
 
     private String xinwenPhoto;
@@ -81,27 +81,27 @@ public class XinwenEntity<T> implements Serializable {
 
 
     /**
-     * 新闻类型
+     * 惠农推介类型
      */
-    @ColumnInfo(comment="新闻类型",type="int(11)")
+    @ColumnInfo(comment="惠农推介类型",type="int(11)")
     @TableField(value = "xinwen_types")
 
     private Integer xinwenTypes;
 
 
     /**
-     * 新闻热度
+     * 惠农推介热度
      */
-    @ColumnInfo(comment="新闻热度",type="int(11)")
+    @ColumnInfo(comment="惠农推介热度",type="int(11)")
     @TableField(value = "xinwen_clicknum")
 
     private Integer xinwenClicknum;
 
 
     /**
-     * 新闻介绍
+     * 惠农推介介绍
      */
-    @ColumnInfo(comment="新闻介绍",type="longtext")
+    @ColumnInfo(comment="惠农推介介绍",type="longtext")
     @TableField(value = "xinwen_content")
 
     private String xinwenContent;
@@ -152,26 +152,26 @@ public class XinwenEntity<T> implements Serializable {
         this.id = id;
     }
     /**
-	 * 获取：新闻标题
+	 * 获取：惠农推介标题
 	 */
     public String getXinwenName() {
         return xinwenName;
     }
     /**
-	 * 设置：新闻标题
+	 * 设置：惠农推介标题
 	 */
 
     public void setXinwenName(String xinwenName) {
         this.xinwenName = xinwenName;
     }
     /**
-	 * 获取：新闻封面
+	 * 获取：惠农推介封面
 	 */
     public String getXinwenPhoto() {
         return xinwenPhoto;
     }
     /**
-	 * 设置：新闻封面
+	 * 设置：惠农推介封面
 	 */
 
     public void setXinwenPhoto(String xinwenPhoto) {
@@ -191,39 +191,39 @@ public class XinwenEntity<T> implements Serializable {
         this.xinwenVideo = xinwenVideo;
     }
     /**
-	 * 获取：新闻类型
+	 * 获取：惠农推介类型
 	 */
     public Integer getXinwenTypes() {
         return xinwenTypes;
     }
     /**
-	 * 设置：新闻类型
+	 * 设置：惠农推介类型
 	 */
 
     public void setXinwenTypes(Integer xinwenTypes) {
         this.xinwenTypes = xinwenTypes;
     }
     /**
-	 * 获取：新闻热度
+	 * 获取：惠农推介热度
 	 */
     public Integer getXinwenClicknum() {
         return xinwenClicknum;
     }
     /**
-	 * 设置：新闻热度
+	 * 设置：惠农推介热度
 	 */
 
     public void setXinwenClicknum(Integer xinwenClicknum) {
         this.xinwenClicknum = xinwenClicknum;
     }
     /**
-	 * 获取：新闻介绍
+	 * 获取：惠农推介介绍
 	 */
     public String getXinwenContent() {
         return xinwenContent;
     }
     /**
-	 * 设置：新闻介绍
+	 * 设置：惠农推介介绍
 	 */
 
     public void setXinwenContent(String xinwenContent) {

@@ -10,7 +10,7 @@ import org.apache.ibatis.annotations.Param;
 import com.entity.view.XinwenView;
 
 /**
- * 新闻信息 Dao 接口
+ * 惠农推介 Dao 接口
  *
  * @author 
  */

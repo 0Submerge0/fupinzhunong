@@ -19,7 +19,7 @@ import com.utils.DateUtil;
 
 
 /**
- * 新闻收藏
+ * 惠农推介收藏
  *
  * @author 
  * @email
@@ -54,9 +54,9 @@ public class XinwenCollectionEntity<T> implements Serializable {
 
 
     /**
-     * 新闻
+     * 惠农推介
      */
-    @ColumnInfo(comment="新闻",type="int(11)")
+    @ColumnInfo(comment="惠农推介",type="int(11)")
     @TableField(value = "xinwen_id")
 
     private Integer xinwenId;
@@ -116,13 +116,13 @@ public class XinwenCollectionEntity<T> implements Serializable {
         this.id = id;
     }
     /**
-	 * 获取：新闻
+	 * 获取：惠农推介
 	 */
     public Integer getXinwenId() {
         return xinwenId;
     }
     /**
-	 * 设置：新闻
+	 * 设置：惠农推介
 	 */
 
     public void setXinwenId(Integer xinwenId) {

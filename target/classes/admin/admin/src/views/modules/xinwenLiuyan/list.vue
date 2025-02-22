@@ -5,17 +5,17 @@
         <div v-if="showFlag">
             <el-form :inline="true" :model="searchForm" class="form-content">
                 <el-row :gutter="20" class="slt" :style="{justifyContent:contents.searchBoxPosition=='1'?'flex-start':contents.searchBoxPosition=='2'?'center':'flex-end'}">
-                                                                
-                                         
-                    <el-form-item :label="contents.inputTitle == 1 ? '新闻标题' : ''">
-                        <el-input prefix-icon="el-icon-search" v-model="searchForm.xinwenName" placeholder="新闻标题" clearable></el-input>
+
+
+                    <el-form-item :label="contents.inputTitle == 1 ? '惠农推介标题' : ''">
+                        <el-input prefix-icon="el-icon-search" v-model="searchForm.xinwenName" placeholder="惠农推介标题" clearable></el-input>
                     </el-form-item>
-                                                             
-                                                                                                                                             
+
+
                     <el-form-item :label="contents.inputTitle == 1 ? '用户名称' : ''">
                         <el-input prefix-icon="el-icon-search" v-model="searchForm.yonghuName" placeholder="用户名称" clearable></el-input>
                     </el-form-item>
-                                                                                                                                                                
+
 
                     <el-form-item>
                         <el-button type="success" @click="search()">查询<i class="el-icon-search el-icon--right"/></el-button>
@@ -49,7 +49,7 @@
                            v-if="isAuth('xinwenLiuyan','导入导出')"
                            icon="el-icon-download"
                            href="http://localhost:8080/fupinzhunong/upload/xinwenLiuyanMuBan.xls"
-                        >批量导入新闻留言数据模板</a>
+                        >批量导入惠农推介留言数据模板</a>
                         &nbsp;
                         <el-upload
                                 v-if="isAuth('xinwenLiuyan','导入导出')"
@@ -62,7 +62,7 @@
                                     v-if="isAuth('xinwenLiuyan','导入导出')"
                                     type="success"
                                     icon="el-icon-upload2"
-                            >批量导入新闻留言数据</el-button>
+                            >批量导入惠农推介留言数据</el-button>
                         </el-upload>
                         &nbsp;
                         <!-- 导出excel -->
@@ -100,7 +100,7 @@
                     <el-table-column  :sortable="contents.tableSortable" :align="contents.tableAlign"
                                       prop="xinwenName"
                                       header-align="center"
-                                      label="新闻标题">
+                                      label="惠农推介标题">
                         <template slot-scope="scope">
                             {{scope.row.xinwenName}}
                         </template>
@@ -273,11 +273,11 @@
             //导出excel
             json_fields: {
                 //级联表字段
-                     '新闻标题': 'xinwenName',
-                     '新闻封面': 'xinwenPhoto',
+                     '惠农推介标题': 'xinwenName',
+                     '惠农推介封面': 'xinwenPhoto',
                      '视频': 'xinwenVideo',
-                     '新闻类型': 'xinwenTypes',
-                     '新闻热度': 'xinwenClicknum',
+                     '惠农推介类型': 'xinwenTypes',
+                     '惠农推介热度': 'xinwenClicknum',
                      '用户名称': 'yonghuName',
                      '用户手机号': 'yonghuPhone',
                      '用户身份证号': 'yonghuIdNumber',
@@ -674,19 +674,19 @@
                     sort: 'id',
                 }
 
-                                         
+
                 if (this.searchForm.xinwenName!= '' && this.searchForm.xinwenName!= undefined) {
                     params['xinwenName'] = '%' + this.searchForm.xinwenName + '%'
                 }
-                                                             
+
                 if (this.searchForm.xinwenTypes!= '' && this.searchForm.xinwenTypes!= undefined) {
                     params['xinwenTypes'] = this.searchForm.xinwenTypes
                 }
-                                                                                                                                             
+
                 if (this.searchForm.yonghuName!= '' && this.searchForm.yonghuName!= undefined) {
                     params['yonghuName'] = '%' + this.searchForm.yonghuName + '%'
                 }
-                                                                                                                                                                                                                                
+
                 params['xinwenLiuyanDelete'] = 1// 逻辑删除字段 1 未删除 2 删除
 
 
@@ -801,7 +801,7 @@
                 }).then(({data}) => {
                     if(data && data.code === 0){
                         _this.$message({
-                            message: "导入新闻留言数据成功",
+                            message: "导入惠农推介留言数据成功",
                             type: "success",
                             duration: 1500,
                             onClose: () => {

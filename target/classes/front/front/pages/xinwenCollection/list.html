@@ -2,7 +2,7 @@
 <html>
 <head lang="en">
     <meta charset="utf-8">
-    <title>新闻收藏</title>
+    <title>惠农推介收藏</title>
     <meta name="keywords" content=""/>
     <meta name="description" content=""/>
     <meta name="renderer" content="webkit">
@@ -61,7 +61,7 @@
 <div class="index-sec1">
     <div class="sec1-left fl">
         <p class="p1">USER / CENTER</p>
-        <p class="p2">新闻收藏<b></b></p>
+        <p class="p2">惠农推介收藏<b></b></p>
         <ul>
             <li v-for="(item,index) in centerMenu" v-bind:key="index" :class="item.url=='../xinwenCollection/list.html'?'on':''" @click="jump(item.url)">
                 <i class="layui-icon">&#xe756;</i><span></span>{{item.name}}
@@ -284,9 +284,9 @@
         });
 
 
-                                                            //级联表的 新闻类型 字段 字典表查询
+                                                            //级联表的 惠农推介类型 字段 字典表查询
             xinwenTypesSelect();
-            //级联表的 新闻类型 字段 字典表查询方法
+            //级联表的 惠农推介类型 字段 字典表查询方法
             function xinwenTypesSelect() {
                 http.request("dictionary/page?page=1&limit=100&sort=&order=&dicCode=xinwen_types", 'get', {}, function (res) {
                     if(res.code == 0){

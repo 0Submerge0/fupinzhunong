@@ -10,7 +10,7 @@ import java.io.Serializable;
 
 
 /**
- * 新闻收藏
+ * 惠农推介收藏
  * 接收传参的实体类
  *（实际开发中配合移动端接口开发手动去掉些没用的字段， 后端一般用entity就够用了）
  * 取自ModelAndView 的model名称
@@ -28,7 +28,7 @@ public class XinwenCollectionModel implements Serializable {
 
 
     /**
-     * 新闻
+     * 惠农推介
      */
     private Integer xinwenId;
 
@@ -76,7 +76,7 @@ public class XinwenCollectionModel implements Serializable {
         this.id = id;
     }
     /**
-	 * 获取：新闻
+	 * 获取：惠农推介
 	 */
     public Integer getXinwenId() {
         return xinwenId;
@@ -84,7 +84,7 @@ public class XinwenCollectionModel implements Serializable {
 
 
     /**
-	 * 设置：新闻
+	 * 设置：惠农推介
 	 */
     public void setXinwenId(Integer xinwenId) {
         this.xinwenId = xinwenId;

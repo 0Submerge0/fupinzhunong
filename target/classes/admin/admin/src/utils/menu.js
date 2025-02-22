@@ -68,7 +68,7 @@ const menu = {
                             "删除",
                             "修改"
                         ],
-                        "menu":"新闻类型管理",
+                        "menu":"惠农推介管理",
                         "menuJump":"列表",
                         "tableName":"dictionaryXinwen"
                     }
@@ -148,7 +148,7 @@ const menu = {
                             "修改",
                             "删除"
                         ],
-                        "menu":"新闻信息管理",
+                        "menu":"惠农推介管理",
                         "menuJump":"列表",
                         "tableName":"xinwen"
                     }
@@ -159,7 +159,7 @@ const menu = {
                             "修改",
                             "删除"
                         ],
-                        "menu":"新闻留言管理",
+                        "menu":"惠农推介留言管理",
                         "menuJump":"列表",
                         "tableName":"xinwenLiuyan"
                     }
@@ -169,12 +169,12 @@ const menu = {
                             "查看",
                             "删除"
                         ],
-                        "menu":"新闻收藏管理",
+                        "menu":"惠农推介收藏管理",
                         "menuJump":"列表",
                         "tableName":"xinwenCollection"
                     }
                 ],
-                "menu":"新闻信息管理"
+                "menu":"惠农推介管理"
             }
             ,{
                 "child":[

@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-    <title>新闻信息添加</title>
+    <title>惠农推介添加</title>
     <!-- bootstrap样式，地图插件使用 -->
     <link rel="stylesheet" href="../../css/bootstrap.min.css" />
     <link rel="stylesheet" href="../../layui/css/layui.css">
@@ -93,7 +93,7 @@
     <!-- 当前表的 -->
                 <div class="layui-form-item main_borderColor" :style='{"padding":"10px","boxShadow":"0 0 0px rgba(255,0,0,.8)","margin":"0 0 10px 0","backgroundColor":"rgba(255, 255, 255, 0)","borderRadius":"1px","borderWidth":"0 0 1px 0","borderStyle":"solid"}'>
                     <label  :style='{"width":"auto","borderColor": "rgba(255, 255, 255, 0)","padding":"0 12px 0 0","backgroundColor":"rgba(255, 255, 255, 0)","fontSize":"15px","color":"#333","textAlign":"left"}' class="layui-form-label">
-                        新闻标题：
+                        惠农标题：
                     </label>
                     <div class="layui-input-block">
                         <input class="layui-input main_borderColor" :style='{"padding":"0 12px","boxShadow":"0 0 0px rgba(160, 67, 26, 1)","backgroundColor":"#fff","color":"rgba(135, 206, 250, 1)","borderRadius":"4px","textAlign":"left","borderWidth":"1px","fontSize":"15px","borderStyle":"solid","height":"40px"}'
@@ -102,7 +102,7 @@
                 </div>
                 <div class="layui-form-item main_borderColor" :style='{"padding":"10px","boxShadow":"0 0 0px rgba(255,0,0,.8)","margin":"0 0 10px 0","backgroundColor":"rgba(255, 255, 255, 0)","borderRadius":"1px","borderWidth":"0 0 1px 0","borderStyle":"solid"}'>
                     <label  :style='{"width":"auto","borderColor": "rgba(255, 255, 255, 0)","padding":"0 12px 0 0","backgroundColor":"rgba(255, 255, 255, 0)","fontSize":"15px","color":"#333","textAlign":"left"}' class="layui-form-label">
-                        新闻封面：
+                        惠农封面：
                     </label>
                     <div class="layui-input-block">
                         <div v-if="detail.xinwenPhoto" style="display:inline-block;margin-right:10px;">
@@ -111,7 +111,7 @@
                             <input type="hidden" :value="detail.xinwenPhoto" id="xinwenPhoto" name="xinwenPhoto" />
                         </div>
                         <button v-if="!ro.xinwenPhoto" :style='{"padding":"0 10px","boxShadow":"0 0 0px rgba(255,0,0,.5)","margin":"0 10px 0 0","borderColor":"#ccc","color":"#fff","borderRadius":"8px","borderWidth":"0","width":"auto","fontSize":"14px","borderStyle":"solid","height":"44px"}' type="button" class="layui-btn btn-theme main_backgroundColor" id="xinwenPhotoUpload">
-                            <i v-if="true" :style='{"color":"#fff","show":true,"fontSize":"14px"}' class="layui-icon">&#xe67c;</i>上传新闻封面
+                            <i v-if="true" :style='{"color":"#fff","show":true,"fontSize":"14px"}' class="layui-icon">&#xe67c;</i>上传惠农封面
                         </button>
                     </div>
                 </div>
@@ -135,7 +135,7 @@
                 </div>
                     <div class="layui-form-item main_borderColor" :style='{"padding":"10px","boxShadow":"0 0 0px rgba(255,0,0,.8)","margin":"0 0 10px 0","backgroundColor":"rgba(255, 255, 255, 0)","borderRadius":"1px","borderWidth":"0 0 1px 0","borderStyle":"solid"}'>
                     <label  :style='{"width":"auto","borderColor": "rgba(255, 255, 255, 0)","padding":"0 12px 0 0","backgroundColor":"rgba(255, 255, 255, 0)","fontSize":"15px","color":"#333","textAlign":"left"}' class="layui-form-label">
-                        新闻类型：
+                        惠农类型：
                     </label>
                     <div class="layui-input-block">
                         <select name="xinwenTypes" id="xinwenTypes" lay-filter="xinwenTypes" :disabled="ro.xinwenTypes">
@@ -145,7 +145,7 @@
                 </div>
             <div class="layui-form-item main_borderColor" :style='{"padding":"10px","boxShadow":"0 0 0px rgba(255,0,0,.8)","margin":"0 0 10px 0","backgroundColor":"rgba(255, 255, 255, 0)","borderRadius":"1px","borderWidth":"0 0 1px 0","borderStyle":"solid"}'>
                 <label  :style='{"width":"auto","borderColor": "rgba(255, 255, 255, 0)","padding":"0 12px 0 0","backgroundColor":"rgba(255, 255, 255, 0)","fontSize":"15px","color":"#333","textAlign":"left"}' class="layui-form-label">
-                    新闻介绍：
+                    惠农介绍：
                 </label>
                 <div class="layui-input-block">
                     <textarea class="main_borderColor layui-input" style="width: 100%;height: 100px;border-radius: 5px;padding: 10px" v-model="detail.xinwenContent" lay-verify="required" :readonly="ro.xinwenContent" name="xinwenContent" id="xinwenContent" autocomplete="off"></textarea>
@@ -247,11 +247,11 @@
             localStorage.setItem("goUtl","./pages/xinwen/list.html")
 
             // 下拉框
-            // 新闻类型的查询和初始化
+            // 惠农类型的查询和初始化
             xinwenTypesSelect();
 
            // 上传文件
-            // 新闻封面的文件上传
+            // 惠农封面的文件上传
             upload.render({
                 //绑定元素
                 elem: '#xinwenPhotoUpload',
@@ -421,7 +421,7 @@
 
 
 
-       // 新闻类型的查询
+       // 惠农类型的查询
        function xinwenTypesSelect() {
            //填充下拉框选项
            layui.http.request("dictionary/page?page=1&limit=100&sort=&order=&dicCode=xinwen_types", "GET", {}, (res) => {

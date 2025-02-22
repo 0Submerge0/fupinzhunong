@@ -9,7 +9,7 @@ import org.springframework.lang.Nullable;
 import java.util.List;
 
 /**
- * 新闻收藏 服务类
+ * 惠农推介收藏 服务类
  */
 public interface XinwenCollectionService extends IService<XinwenCollectionEntity> {
 

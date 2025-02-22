@@ -10,21 +10,21 @@
             <el-row>
                 <input id="updateId" name="id" type="hidden">
                <el-col :span="12">
-                   <el-form-item class="input" v-if="type!='info'"  label="新闻标题" prop="xinwenName">
+                   <el-form-item class="input" v-if="type!='info'"  label="惠农推介标题" prop="xinwenName">
                        <el-input v-model="ruleForm.xinwenName"
-                                 placeholder="新闻标题" clearable  :readonly="ro.xinwenName"></el-input>
+                                 placeholder="惠农推介标题" clearable  :readonly="ro.xinwenName"></el-input>
                    </el-form-item>
                    <div v-else-if="type=='info'">
-                       <el-form-item class="input" label="新闻标题" prop="xinwenName">
+                       <el-form-item class="input" label="惠农推介标题" prop="xinwenName">
                            <el-input v-model="ruleForm.xinwenName"
-                                     placeholder="新闻标题" readonly></el-input>
+                                     placeholder="惠农推介标题" readonly></el-input>
                        </el-form-item>
                    </div>
                </el-col>
                 <el-col :span="12">
-                    <el-form-item class="upload" v-if="type!='info' && !ro.xinwenPhoto" label="新闻封面" prop="xinwenPhoto">
+                    <el-form-item class="upload" v-if="type!='info' && !ro.xinwenPhoto" label="惠农推介封面" prop="xinwenPhoto">
                         <file-upload
-                            tip="点击上传新闻封面"
+                            tip="点击上传惠农推介封面"
                             action="file/upload"
                             :limit="3"
                             :multiple="true"
@@ -33,7 +33,7 @@
                         ></file-upload>
                     </el-form-item>
                     <div v-else>
-                        <el-form-item v-if="ruleForm.xinwenPhoto" label="新闻封面" prop="xinwenPhoto">
+                        <el-form-item v-if="ruleForm.xinwenPhoto" label="惠农推介封面" prop="xinwenPhoto">
                             <img style="margin-right:20px;" v-bind:key="index" v-for="(item,index) in (ruleForm.xinwenPhoto || '').split(',')" :src="$base.url+item" width="100" height="100">
                         </el-form-item>
                     </div>
@@ -57,8 +57,8 @@
                     </div>
                 </el-col>
                 <el-col :span="12">
-                    <el-form-item class="select" v-if="type!='info'"  label="新闻类型" prop="xinwenTypes">
-                        <el-select v-model="ruleForm.xinwenTypes" :disabled="ro.xinwenTypes" placeholder="请选择新闻类型">
+                    <el-form-item class="select" v-if="type!='info'"  label="惠农推介类型" prop="xinwenTypes">
+                        <el-select v-model="ruleForm.xinwenTypes" :disabled="ro.xinwenTypes" placeholder="请选择惠农推介类型">
                             <el-option
                                 v-for="(item,index) in xinwenTypesOptions"
                                 v-bind:key="item.codeIndex"
@@ -68,14 +68,14 @@
                         </el-select>
                     </el-form-item>
                     <div v-else-if="type=='info'">
-                        <el-form-item class="input" label="新闻类型" prop="xinwenValue">
+                        <el-form-item class="input" label="惠农推介类型" prop="xinwenValue">
                         <el-input v-model="ruleForm.xinwenValue"
-                            placeholder="新闻类型" readonly></el-input>
+                            placeholder="惠农推介类型" readonly></el-input>
                         </el-form-item>
                     </div>
                 </el-col>
                 <el-col :span="24">
-                    <el-form-item v-if="type!='info' && !ro.xinwenContent"  label="新闻介绍" prop="xinwenContent">
+                    <el-form-item v-if="type!='info' && !ro.xinwenContent"  label="惠农推介详情" prop="xinwenContent">
                         <editor style="min-width: 200px; max-width: 600px;"
                                 v-model="ruleForm.xinwenContent"
                                 class="editor"
@@ -83,7 +83,7 @@
                         </editor>
                     </el-form-item>
                     <div v-else-if="type=='info'">
-                        <el-form-item v-if="ruleForm.xinwenContent" label="新闻介绍" prop="xinwenContent">
+                        <el-form-item v-if="ruleForm.xinwenContent" label="惠农推介详情" prop="xinwenContent">
                             <span v-html="ruleForm.xinwenContent"></span>
                         </el-form-item>
                     </div>
@@ -134,30 +134,30 @@
                 xinwenTypesOptions : [],
                 rules: {
                    xinwenName: [
-                              { required: true, message: '新闻标题不能为空', trigger: 'blur' },
+                              { required: true, message: '惠农推介标题不能为空', trigger: 'blur' },
                           ],
                    xinwenPhoto: [
-                              { required: true, message: '新闻封面不能为空', trigger: 'blur' },
+                              { required: true, message: '惠农推介封面不能为空', trigger: 'blur' },
                           ],
                    xinwenVideo: [
                               { required: true, message: '视频不能为空', trigger: 'blur' },
                           ],
                    xinwenTypes: [
-                              { required: true, message: '新闻类型不能为空', trigger: 'blur' },
+                              { required: true, message: '惠农推介类型不能为空', trigger: 'blur' },
                               {  pattern: /^[0-9]*$/,
                                   message: '只允许输入整数',
                                   trigger: 'blur'
                               }
                           ],
                    xinwenClicknum: [
-                              { required: true, message: '新闻热度不能为空', trigger: 'blur' },
+                              { required: true, message: '惠农推介热度不能为空', trigger: 'blur' },
                               {  pattern: /^[0-9]*$/,
                                   message: '只允许输入整数',
                                   trigger: 'blur'
                               }
                           ],
                    xinwenContent: [
-                              { required: true, message: '新闻介绍不能为空', trigger: 'blur' },
+                              { required: true, message: '惠农推介介绍不能为空', trigger: 'blur' },
                           ],
                    xinwenDelete: [
                               { required: true, message: '逻辑删除不能为空', trigger: 'blur' },

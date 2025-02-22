@@ -13,7 +13,7 @@ import java.util.Date;
 import com.utils.DateUtil;
 
 /**
-* 新闻收藏
+* 惠农推介收藏
 * 后端返回视图实体辅助类
 * （通常后端关联的表或者自定义的字段需要返回使用）
 */
@@ -28,18 +28,18 @@ public class XinwenCollectionView extends XinwenCollectionEntity implements Seri
 	@ColumnInfo(comment="类型的字典表值",type="varchar(200)")
 	private String xinwenCollectionValue;
 
-	//级联表 新闻信息
+	//级联表 惠农推介
 		/**
-		* 新闻标题
+		* 惠农推介标题
 		*/
 
-		@ColumnInfo(comment="新闻标题",type="varchar(200)")
+		@ColumnInfo(comment="惠农推介标题",type="varchar(200)")
 		private String xinwenName;
 		/**
-		* 新闻封面
+		* 惠农推介封面
 		*/
 
-		@ColumnInfo(comment="新闻封面",type="varchar(200)")
+		@ColumnInfo(comment="惠农推介封面",type="varchar(200)")
 		private String xinwenPhoto;
 		/**
 		* 视频
@@ -48,26 +48,26 @@ public class XinwenCollectionView extends XinwenCollectionEntity implements Seri
 		@ColumnInfo(comment="视频",type="varchar(200)")
 		private String xinwenVideo;
 		/**
-		* 新闻类型
+		* 惠农推介类型
 		*/
-		@ColumnInfo(comment="新闻类型",type="int(11)")
+		@ColumnInfo(comment="惠农推介类型",type="int(11)")
 		private Integer xinwenTypes;
 			/**
-			* 新闻类型的值
+			* 惠农推介类型的值
 			*/
-			@ColumnInfo(comment="新闻类型的字典表值",type="varchar(200)")
+			@ColumnInfo(comment="惠农推介类型的字典表值",type="varchar(200)")
 			private String xinwenValue;
 		/**
-		* 新闻热度
+		* 惠农推介热度
 		*/
 
-		@ColumnInfo(comment="新闻热度",type="int(11)")
+		@ColumnInfo(comment="惠农推介热度",type="int(11)")
 		private Integer xinwenClicknum;
 		/**
-		* 新闻介绍
+		* 惠农推介介绍
 		*/
 
-		@ColumnInfo(comment="新闻介绍",type="longtext")
+		@ColumnInfo(comment="惠农推介介绍",type="longtext")
 		private String xinwenContent;
 		/**
 		* 逻辑删除
@@ -151,29 +151,29 @@ public class XinwenCollectionView extends XinwenCollectionEntity implements Seri
 	}
 
 
-	//级联表的get和set 新闻信息
+	//级联表的get和set 惠农推介
 
 		/**
-		* 获取： 新闻标题
+		* 获取： 惠农推介标题
 		*/
 		public String getXinwenName() {
 			return xinwenName;
 		}
 		/**
-		* 设置： 新闻标题
+		* 设置： 惠农推介标题
 		*/
 		public void setXinwenName(String xinwenName) {
 			this.xinwenName = xinwenName;
 		}
 
 		/**
-		* 获取： 新闻封面
+		* 获取： 惠农推介封面
 		*/
 		public String getXinwenPhoto() {
 			return xinwenPhoto;
 		}
 		/**
-		* 设置： 新闻封面
+		* 设置： 惠农推介封面
 		*/
 		public void setXinwenPhoto(String xinwenPhoto) {
 			this.xinwenPhoto = xinwenPhoto;
@@ -192,13 +192,13 @@ public class XinwenCollectionView extends XinwenCollectionEntity implements Seri
 			this.xinwenVideo = xinwenVideo;
 		}
 		/**
-		* 获取： 新闻类型
+		* 获取： 惠农推介类型
 		*/
 		public Integer getXinwenTypes() {
 			return xinwenTypes;
 		}
 		/**
-		* 设置： 新闻类型
+		* 设置： 惠农推介类型
 		*/
 		public void setXinwenTypes(Integer xinwenTypes) {
 			this.xinwenTypes = xinwenTypes;
@@ -206,39 +206,39 @@ public class XinwenCollectionView extends XinwenCollectionEntity implements Seri
 
 
 			/**
-			* 获取： 新闻类型的值
+			* 获取： 惠农推介类型的值
 			*/
 			public String getXinwenValue() {
 				return xinwenValue;
 			}
 			/**
-			* 设置： 新闻类型的值
+			* 设置： 惠农推介类型的值
 			*/
 			public void setXinwenValue(String xinwenValue) {
 				this.xinwenValue = xinwenValue;
 			}
 
 		/**
-		* 获取： 新闻热度
+		* 获取： 惠农推介热度
 		*/
 		public Integer getXinwenClicknum() {
 			return xinwenClicknum;
 		}
 		/**
-		* 设置： 新闻热度
+		* 设置： 惠农推介热度
 		*/
 		public void setXinwenClicknum(Integer xinwenClicknum) {
 			this.xinwenClicknum = xinwenClicknum;
 		}
 
 		/**
-		* 获取： 新闻介绍
+		* 获取： 惠农推介介绍
 		*/
 		public String getXinwenContent() {
 			return xinwenContent;
 		}
 		/**
-		* 设置： 新闻介绍
+		* 设置： 惠农推介介绍
 		*/
 		public void setXinwenContent(String xinwenContent) {
 			this.xinwenContent = xinwenContent;

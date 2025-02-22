@@ -10,7 +10,7 @@ import org.springframework.format.annotation.DateTimeFormat;
 import java.io.Serializable;
 
 /**
- * 新闻信息
+ * 惠农推介
  * 手机端接口返回实体辅助类
  * （主要作用去除一些不必要的字段）
  */
@@ -28,7 +28,7 @@ public class XinwenVO implements Serializable {
 
 
     /**
-     * 新闻标题
+     * 惠农推介标题
      */
 
     @TableField(value = "xinwen_name")
@@ -36,7 +36,7 @@ public class XinwenVO implements Serializable {
 
 
     /**
-     * 新闻封面
+     * 惠农推介封面
      */
 
     @TableField(value = "xinwen_photo")
@@ -52,7 +52,7 @@ public class XinwenVO implements Serializable {
 
 
     /**
-     * 新闻类型
+     * 惠农推介类型
      */
 
     @TableField(value = "xinwen_types")
@@ -60,7 +60,7 @@ public class XinwenVO implements Serializable {
 
 
     /**
-     * 新闻热度
+     * 惠农推介热度
      */
 
     @TableField(value = "xinwen_clicknum")
@@ -68,7 +68,7 @@ public class XinwenVO implements Serializable {
 
 
     /**
-     * 新闻介绍
+     * 惠农推介介绍
      */
 
     @TableField(value = "xinwen_content")
@@ -119,7 +119,7 @@ public class XinwenVO implements Serializable {
         this.id = id;
     }
     /**
-	 * 设置：新闻标题
+	 * 设置：惠农推介标题
 	 */
     public String getXinwenName() {
         return xinwenName;
@@ -127,14 +127,14 @@ public class XinwenVO implements Serializable {
 
 
     /**
-	 * 获取：新闻标题
+	 * 获取：惠农推介标题
 	 */
 
     public void setXinwenName(String xinwenName) {
         this.xinwenName = xinwenName;
     }
     /**
-	 * 设置：新闻封面
+	 * 设置：惠农推介封面
 	 */
     public String getXinwenPhoto() {
         return xinwenPhoto;
@@ -142,7 +142,7 @@ public class XinwenVO implements Serializable {
 
 
     /**
-	 * 获取：新闻封面
+	 * 获取：惠农推介封面
 	 */
 
     public void setXinwenPhoto(String xinwenPhoto) {
@@ -164,7 +164,7 @@ public class XinwenVO implements Serializable {
         this.xinwenVideo = xinwenVideo;
     }
     /**
-	 * 设置：新闻类型
+	 * 设置：惠农推介类型
 	 */
     public Integer getXinwenTypes() {
         return xinwenTypes;
@@ -172,14 +172,14 @@ public class XinwenVO implements Serializable {
 
 
     /**
-	 * 获取：新闻类型
+	 * 获取：惠农推介类型
 	 */
 
     public void setXinwenTypes(Integer xinwenTypes) {
         this.xinwenTypes = xinwenTypes;
     }
     /**
-	 * 设置：新闻热度
+	 * 设置：惠农推介热度
 	 */
     public Integer getXinwenClicknum() {
         return xinwenClicknum;
@@ -187,14 +187,14 @@ public class XinwenVO implements Serializable {
 
 
     /**
-	 * 获取：新闻热度
+	 * 获取：惠农推介热度
 	 */
 
     public void setXinwenClicknum(Integer xinwenClicknum) {
         this.xinwenClicknum = xinwenClicknum;
     }
     /**
-	 * 设置：新闻介绍
+	 * 设置：惠农推介介绍
 	 */
     public String getXinwenContent() {
         return xinwenContent;
@@ -202,7 +202,7 @@ public class XinwenVO implements Serializable {
 
 
     /**
-	 * 获取：新闻介绍
+	 * 获取：惠农推介介绍
 	 */
 
     public void setXinwenContent(String xinwenContent) {

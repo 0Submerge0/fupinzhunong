@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-    <title>新闻信息详情页</title>
+    <title>惠农推介详情页</title>
     <link rel="stylesheet" href="../../layui/css/layui.css">
     <!-- 样式 -->
     <link rel="stylesheet" href="../../css/style.css"/>
@@ -66,11 +66,11 @@
                 <span>{{title}}</span>
             </div>
                   <div v-if="detail.xinwenTypes" class="particulars">
-                      <span class="displayBianhao">新闻类型:</span>
+                      <span class="displayBianhao">惠农类型:</span>
                       <span class="dataExhibition"> {{detail.xinwenValue}} </span>
                   </div>
                   <div v-if="detail.xinwenClicknum" class="particulars">
-                      <span class="displayBianhao">新闻热度:</span>
+                      <span class="displayBianhao">推介热度:</span>
                       <span class="dataExhibition"> {{detail.xinwenClicknum}} </span>
                   </div>
         </div>
@@ -107,7 +107,7 @@
     <div class="layui-row detail-tab" style="border: none;box-shadow: none;">
         <div class="layui-tab layui-tab-card" style="overflow: hidden;border: none; box-shadow: none;">
             <ul class="layui-tab-title " :style='{"backgroundColor":"#fff","fontSize":"14px"}' style="color: var(--publicMainColor);border: none;">
-                <li class="layui-this">新闻介绍</li>
+                <li class="layui-this">惠农推介介绍</li>
                 <li>留言</li>
             </ul>
 

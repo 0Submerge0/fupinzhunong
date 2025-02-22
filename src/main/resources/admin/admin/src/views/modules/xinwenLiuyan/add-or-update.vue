@@ -9,8 +9,8 @@
                 >
             <el-row>
                 <el-col :span="12"  v-if="sessionTable !='xinwen'">
-                    <el-form-item class="select" v-if="type!='info'"  label="新闻信息" prop="xinwenId">
-                        <el-select v-model="ruleForm.xinwenId" :disabled="ro.xinwenId" filterable placeholder="请选择新闻信息" @change="xinwenChange">
+                    <el-form-item class="select" v-if="type!='info'"  label="惠农推介" prop="xinwenId">
+                        <el-select v-model="ruleForm.xinwenId" :disabled="ro.xinwenId" filterable placeholder="请选择惠农推介" @change="xinwenChange">
                             <el-option
                                     v-for="(item,index) in xinwenOptions"
                                     v-bind:key="item.id"
@@ -22,14 +22,14 @@
                 </el-col>
 
                 <el-col :span="12"  v-if="sessionTable !='xinwen' ">
-                    <el-form-item class="input" v-if="type!='info'"  label="新闻标题" prop="xinwenName">
+                    <el-form-item class="input" v-if="type!='info'"  label="惠农推介标题" prop="xinwenName">
                         <el-input v-model="xinwenForm.xinwenName"
-                                  placeholder="新闻标题" clearable readonly></el-input>
+                                  placeholder="惠农推介标题" clearable readonly></el-input>
                     </el-form-item>
                     <div v-else-if="type=='info'">
-                        <el-form-item class="input" label="新闻标题" prop="xinwenName">
+                        <el-form-item class="input" label="惠农推介标题" prop="xinwenName">
                             <el-input v-model="ruleForm.xinwenName"
-                                      placeholder="新闻标题" readonly></el-input>
+                                      placeholder="惠农推介标题" readonly></el-input>
                         </el-form-item>
                     </div>
                 </el-col>
@@ -126,7 +126,7 @@
                 yonghuOptions : [],
                 rules: {
                    xinwenId: [
-                              { required: true, message: '新闻不能为空', trigger: 'blur' },
+                              { required: true, message: '惠农推介不能为空', trigger: 'blur' },
                               {  pattern: /^[0-9]*$/,
                                   message: '只允许输入整数',
                                   trigger: 'blur'
@@ -165,7 +165,7 @@
 
 
             if (this.role != "管理员"){
-                this.ro.xinwenId = true;//新闻
+                this.ro.xinwenId = true;//惠农推介
                 this.ro.yonghuId = true;//用户
                 this.ro.xinwenLiuyanText = true;//留言内容
             }else{

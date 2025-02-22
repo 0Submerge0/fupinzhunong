@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-    <title>新闻收藏添加</title>
+    <title>惠农推介收藏添加</title>
     <!-- bootstrap样式，地图插件使用 -->
     <link rel="stylesheet" href="../../css/bootstrap.min.css" />
     <link rel="stylesheet" href="../../layui/css/layui.css">
@@ -90,10 +90,10 @@
         <div class="data-add-container  sub_borderColor" :style='{"padding":"20px","margin":"30px auto","backgroundColor":"rgba(255, 255, 255, 0)","borderRadius":"10px","borderWidth":"1px","borderStyle":"solid"}'>
 
             <form class="layui-form layui-form-pane add" lay-filter="myForm">
-                <!-- 级联表 新闻 -->
+                <!-- 级联表 惠农推介 -->
                 <!--<div class="layui-form-item main_borderColor" :style='{"padding":"10px","boxShadow":"0 0 0px rgba(255,0,0,.8)","margin":"0 0 10px 0","backgroundColor":"rgba(255, 255, 255, 0)","borderRadius":"1px","borderWidth":"0 0 1px 0","borderStyle":"solid"}'>
                     <label  :style='{"width":"auto","borderColor": "rgba(255, 255, 255, 0)","padding":"0 12px 0 0","backgroundColor":"rgba(255, 255, 255, 0)","fontSize":"15px","color":"#333","textAlign":"left"}' class="layui-form-label">
-                        新闻：
+                        惠农推介：
                     </label>
                     <div class="layui-input-block">
                         <select name="xinwenId" id="xinwenId" lay-filter="xinwenId">
@@ -181,8 +181,8 @@
                     insertTime: '',
                     createTime: '',
                 },
-                xinwenList:[],//级联表列表 新闻
-                xinwen: {},//级联表单个 新闻
+                xinwenList:[],//级联表列表 惠农推介
+                xinwen: {},//级联表单个 惠农推介
                 yonghuList:[],//级联表列表 用户
                 yonghu: {},//级联表单个 用户
 
@@ -221,10 +221,10 @@
             //var xinwenId = http.getParam('xinwenId');
             let xinwenId = localStorage.getItem("xinwenId")
             if(xinwenId != null && xinwenId != ""){
-                //单个 新闻查询
+                //单个 惠农推介查询
                 initializationXinwen(xinwenId);
             }
-            //列表 新闻查询
+            //列表 惠农推介查询
             initializationXinwenList();
             //var yonghuId = http.getParam('yonghuId');
             let yonghuId = localStorage.getItem("yonghuId")
@@ -327,7 +327,7 @@
 
 
 
-        //单个 新闻查询
+        //单个 惠农推介查询
         function initializationXinwen(id){
             layui.http.request("xinwen/detail/" + id, 'get', {}, function (res) {
                 if(res.code ==0){
@@ -336,7 +336,7 @@
                 }
             });
         }
-        //列表 新闻查询
+        //列表 惠农推介查询
         function initializationXinwenList(){
             layui.http.request("xinwen/page?page=1&limit=100&sort=&order=", 'get', {}, function (res) {
                 if(res.code ==0){

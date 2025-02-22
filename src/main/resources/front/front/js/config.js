@@ -37,11 +37,11 @@ var centerMenu = [
         url: '../renwuYuyue/list.html'
     }
     ,{
-        name: '新闻收藏',
+        name: '惠农推介收藏',
         url: '../xinwenCollection/list.html'
     }
     ,{
-        name: '新闻留言',
+        name: '惠农推介留言',
         url: '../xinwenLiuyan/list.html'
     }
 
@@ -63,7 +63,7 @@ var indexNav = [
         url: './pages/renwu/list.html'
     },
     {
-        name: '新闻信息',
+        name: '惠农推介',
         url: './pages/xinwen/list.html'
     },
 

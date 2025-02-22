@@ -66,11 +66,11 @@ public class YonghuController {
     @Autowired
     private RenwuYuyueService renwuYuyueService;//任务报名
     @Autowired
-    private XinwenService xinwenService;//新闻信息
+    private XinwenService xinwenService;//惠农推介
     @Autowired
-    private XinwenCollectionService xinwenCollectionService;//新闻收藏
+    private XinwenCollectionService xinwenCollectionService;//惠农推介收藏
     @Autowired
-    private XinwenLiuyanService xinwenLiuyanService;//新闻留言
+    private XinwenLiuyanService xinwenLiuyanService;//惠农推介留言
     @Autowired
     private UsersService usersService;//管理员
 

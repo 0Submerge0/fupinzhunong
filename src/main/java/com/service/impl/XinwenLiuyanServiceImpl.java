@@ -24,7 +24,7 @@ import com.service.XinwenLiuyanService;
 import com.entity.view.XinwenLiuyanView;
 
 /**
- * 新闻留言 服务实现类
+ * 惠农推介留言 服务实现类
  */
 @Service("xinwenLiuyanService")
 @Transactional

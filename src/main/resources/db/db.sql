@@ -2,7 +2,8 @@
 SQLyog Ultimate v11.3 (64 bit)
 MySQL - 5.7.32-log : Database - fupinzhunong
 *********************************************************************
-*/
+*/
+
 
 /*!40101 SET NAMES utf8 */;
 
@@ -70,7 +71,7 @@ CREATE TABLE `dictionary` (
 
 /*Data for the table `dictionary` */
 
-insert  into `dictionary`(`id`,`dic_code`,`dic_name`,`code_index`,`index_name`,`super_id`,`beizhu`,`create_time`) values (1,'chat_types','数据类型',1,'问题',NULL,NULL,'2023-04-14 15:15:09'),(2,'chat_types','数据类型',2,'回复',NULL,NULL,'2023-04-14 15:15:09'),(3,'zhuangtai_types','状态',1,'未回复',NULL,NULL,'2023-04-14 15:15:09'),(4,'zhuangtai_types','状态',2,'已回复',NULL,NULL,'2023-04-14 15:15:09'),(5,'xinwen_types','新闻类型',1,'政策新闻',NULL,NULL,'2023-04-14 15:15:09'),(6,'xinwen_types','新闻类型',2,'每日新闻',NULL,NULL,'2023-04-14 15:15:09'),(7,'xinwen_types','新闻类型',3,'表彰内容',NULL,NULL,'2023-04-14 15:15:09'),(8,'xinwen_collection_types','收藏表类型',1,'收藏',NULL,NULL,'2023-04-14 15:15:09'),(9,'renwu_types','任务类型',1,'任务类型1',NULL,NULL,'2023-04-14 15:15:09'),(10,'renwu_types','任务类型',2,'任务类型2',NULL,NULL,'2023-04-14 15:15:09'),(11,'renwu_types','任务类型',3,'任务类型3',NULL,NULL,'2023-04-14 15:15:09'),(12,'zhugtai_types','任务状态',1,'未接取',NULL,NULL,'2023-04-14 15:15:09'),(13,'zhugtai_types','任务状态',2,'已接取',NULL,NULL,'2023-04-14 15:15:09'),(14,'renwu_yuyue_yesno_types','审核状态',1,'待审核',NULL,NULL,'2023-04-14 15:15:09'),(15,'renwu_yuyue_yesno_types','审核状态',2,'同意',NULL,NULL,'2023-04-14 15:15:09'),(16,'renwu_yuyue_yesno_types','审核状态',3,'拒绝',NULL,NULL,'2023-04-14 15:15:09'),(17,'news_types','公告类型',1,'公告类型1',NULL,NULL,'2023-04-14 15:15:09'),(18,'news_types','公告类型',2,'公告类型2',NULL,NULL,'2023-04-14 15:15:09'),(19,'news_types','公告类型',3,'公告类型3',NULL,NULL,'2023-04-14 15:15:09'),(20,'sex_types','性别类型',1,'男',NULL,NULL,'2023-04-14 15:15:09'),(21,'sex_types','性别类型',2,'女',NULL,NULL,'2023-04-14 15:15:09'),(22,'forum_state_types','帖子状态',1,'发帖',NULL,NULL,'2023-04-14 15:15:09'),(23,'forum_state_types','帖子状态',2,'回帖',NULL,NULL,'2023-04-14 15:15:09');
+insert  into `dictionary`(`id`,`dic_code`,`dic_name`,`code_index`,`index_name`,`super_id`,`beizhu`,`create_time`) values (1,'chat_types','数据类型',1,'问题',NULL,NULL,'2023-04-14 15:15:09'),(2,'chat_types','数据类型',2,'回复',NULL,NULL,'2023-04-14 15:15:09'),(3,'zhuangtai_types','状态',1,'未回复',NULL,NULL,'2023-04-14 15:15:09'),(4,'zhuangtai_types','状态',2,'已回复',NULL,NULL,'2023-04-14 15:15:09'),(5,'xinwen_types','惠农推介类型',1,'政策惠农推介',NULL,NULL,'2023-04-14 15:15:09'),(6,'xinwen_types','惠农推介类型',2,'每日惠农推介',NULL,NULL,'2023-04-14 15:15:09'),(7,'xinwen_types','惠农推介类型',3,'表彰内容',NULL,NULL,'2023-04-14 15:15:09'),(8,'xinwen_collection_types','收藏表类型',1,'收藏',NULL,NULL,'2023-04-14 15:15:09'),(9,'renwu_types','任务类型',1,'任务类型1',NULL,NULL,'2023-04-14 15:15:09'),(10,'renwu_types','任务类型',2,'任务类型2',NULL,NULL,'2023-04-14 15:15:09'),(11,'renwu_types','任务类型',3,'任务类型3',NULL,NULL,'2023-04-14 15:15:09'),(12,'zhugtai_types','任务状态',1,'未接取',NULL,NULL,'2023-04-14 15:15:09'),(13,'zhugtai_types','任务状态',2,'已接取',NULL,NULL,'2023-04-14 15:15:09'),(14,'renwu_yuyue_yesno_types','审核状态',1,'待审核',NULL,NULL,'2023-04-14 15:15:09'),(15,'renwu_yuyue_yesno_types','审核状态',2,'同意',NULL,NULL,'2023-04-14 15:15:09'),(16,'renwu_yuyue_yesno_types','审核状态',3,'拒绝',NULL,NULL,'2023-04-14 15:15:09'),(17,'news_types','公告类型',1,'公告类型1',NULL,NULL,'2023-04-14 15:15:09'),(18,'news_types','公告类型',2,'公告类型2',NULL,NULL,'2023-04-14 15:15:09'),(19,'news_types','公告类型',3,'公告类型3',NULL,NULL,'2023-04-14 15:15:09'),(20,'sex_types','性别类型',1,'男',NULL,NULL,'2023-04-14 15:15:09'),(21,'sex_types','性别类型',2,'女',NULL,NULL,'2023-04-14 15:15:09'),(22,'forum_state_types','帖子状态',1,'发帖',NULL,NULL,'2023-04-14 15:15:09'),(23,'forum_state_types','帖子状态',2,'回帖',NULL,NULL,'2023-04-14 15:15:09');
 
 /*Table structure for table `forum` */
 
@@ -206,21 +207,21 @@ DROP TABLE IF EXISTS `xinwen`;
 
 CREATE TABLE `xinwen` (
   `id` int(11) NOT NULL AUTO_INCREMENT COMMENT '主键 ',
-  `xinwen_name` varchar(200) DEFAULT NULL COMMENT '新闻标题  Search111 ',
-  `xinwen_photo` varchar(200) DEFAULT NULL COMMENT '新闻封面',
+  `xinwen_name` varchar(200) DEFAULT NULL COMMENT '惠农推介标题  Search111 ',
+  `xinwen_photo` varchar(200) DEFAULT NULL COMMENT '惠农推介封面',
   `xinwen_video` varchar(200) DEFAULT NULL COMMENT '视频',
-  `xinwen_types` int(11) DEFAULT NULL COMMENT '新闻类型 Search111',
-  `xinwen_clicknum` int(11) DEFAULT NULL COMMENT '新闻热度',
-  `xinwen_content` longtext COMMENT '新闻介绍',
+  `xinwen_types` int(11) DEFAULT NULL COMMENT '惠农推介类型 Search111',
+  `xinwen_clicknum` int(11) DEFAULT NULL COMMENT '惠农推介热度',
+  `xinwen_content` longtext COMMENT '惠农推介介绍',
   `xinwen_delete` int(11) DEFAULT NULL COMMENT '逻辑删除',
   `insert_time` timestamp NULL DEFAULT NULL COMMENT '录入时间',
   `create_time` timestamp NULL DEFAULT NULL COMMENT '创建时间  show1 show2 photoShow',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=15 DEFAULT CHARSET=utf8 COMMENT='新闻信息';
+) ENGINE=InnoDB AUTO_INCREMENT=15 DEFAULT CHARSET=utf8 COMMENT='惠农推介';
 
 /*Data for the table `xinwen` */
 
-insert  into `xinwen`(`id`,`xinwen_name`,`xinwen_photo`,`xinwen_video`,`xinwen_types`,`xinwen_clicknum`,`xinwen_content`,`xinwen_delete`,`insert_time`,`create_time`) values (1,'新闻标题1','upload/news1.jpg','upload/video.mp4',2,254,'新闻介绍1',1,'2023-04-14 15:15:17','2023-04-14 15:15:17'),(2,'新闻标题2','upload/news2.jpg','upload/video.mp4',2,123,'新闻介绍2',1,'2023-04-14 15:15:17','2023-04-14 15:15:17'),(3,'新闻标题3','upload/news3.jpg','upload/video.mp4',1,425,'新闻介绍3',1,'2023-04-14 15:15:17','2023-04-14 15:15:17'),(4,'新闻标题4','upload/news4.jpg','upload/video.mp4',1,459,'新闻介绍4',1,'2023-04-14 15:15:17','2023-04-14 15:15:17'),(5,'新闻标题5','upload/news5.jpg','upload/video.mp4',1,71,'新闻介绍5',1,'2023-04-14 15:15:17','2023-04-14 15:15:17'),(6,'新闻标题6','upload/news6.jpg','upload/video.mp4',2,58,'新闻介绍6',1,'2023-04-14 15:15:17','2023-04-14 15:15:17'),(7,'新闻标题7','upload/news7.jpg','upload/video.mp4',3,275,'新闻介绍7',1,'2023-04-14 15:15:17','2023-04-14 15:15:17'),(8,'新闻标题8','upload/news8.jpg','upload/video.mp4',3,164,'新闻介绍8',1,'2023-04-14 15:15:17','2023-04-14 15:15:17'),(9,'新闻标题9','upload/news9.jpg','upload/video.mp4',2,277,'新闻介绍9',1,'2023-04-14 15:15:17','2023-04-14 15:15:17'),(10,'新闻标题10','upload/news10.jpg','upload/video.mp4',3,244,'新闻介绍10',1,'2023-04-14 15:15:17','2023-04-14 15:15:17'),(11,'新闻标题11','upload/news11.jpg','upload/video.mp4',2,341,'新闻介绍11',1,'2023-04-14 15:15:17','2023-04-14 15:15:17'),(12,'新闻标题12','upload/news12.jpg','upload/video.mp4',1,354,'新闻介绍12',1,'2023-04-14 15:15:17','2023-04-14 15:15:17'),(13,'新闻标题13','upload/news13.jpg','upload/video.mp4',3,166,'新闻介绍13',1,'2023-04-14 15:15:17','2023-04-14 15:15:17'),(14,'新闻标题14','upload/news14.jpg','upload/video.mp4',1,419,'新闻介绍14',1,'2023-04-14 15:15:17','2023-04-14 15:15:17');
+insert  into `xinwen`(`id`,`xinwen_name`,`xinwen_photo`,`xinwen_video`,`xinwen_types`,`xinwen_clicknum`,`xinwen_content`,`xinwen_delete`,`insert_time`,`create_time`) values (1,'惠农推介标题1','upload/news1.jpg','upload/video.mp4',2,254,'惠农推介介绍1',1,'2023-04-14 15:15:17','2023-04-14 15:15:17'),(2,'惠农推介标题2','upload/news2.jpg','upload/video.mp4',2,123,'惠农推介介绍2',1,'2023-04-14 15:15:17','2023-04-14 15:15:17'),(3,'惠农推介标题3','upload/news3.jpg','upload/video.mp4',1,425,'惠农推介介绍3',1,'2023-04-14 15:15:17','2023-04-14 15:15:17'),(4,'惠农推介标题4','upload/news4.jpg','upload/video.mp4',1,459,'惠农推介介绍4',1,'2023-04-14 15:15:17','2023-04-14 15:15:17'),(5,'惠农推介标题5','upload/news5.jpg','upload/video.mp4',1,71,'惠农推介介绍5',1,'2023-04-14 15:15:17','2023-04-14 15:15:17'),(6,'惠农推介标题6','upload/news6.jpg','upload/video.mp4',2,58,'惠农推介介绍6',1,'2023-04-14 15:15:17','2023-04-14 15:15:17'),(7,'惠农推介标题7','upload/news7.jpg','upload/video.mp4',3,275,'惠农推介介绍7',1,'2023-04-14 15:15:17','2023-04-14 15:15:17'),(8,'惠农推介标题8','upload/news8.jpg','upload/video.mp4',3,164,'惠农推介介绍8',1,'2023-04-14 15:15:17','2023-04-14 15:15:17'),(9,'惠农推介标题9','upload/news9.jpg','upload/video.mp4',2,277,'惠农推介介绍9',1,'2023-04-14 15:15:17','2023-04-14 15:15:17'),(10,'惠农推介标题10','upload/news10.jpg','upload/video.mp4',3,244,'惠农推介介绍10',1,'2023-04-14 15:15:17','2023-04-14 15:15:17'),(11,'惠农推介标题11','upload/news11.jpg','upload/video.mp4',2,341,'惠农推介介绍11',1,'2023-04-14 15:15:17','2023-04-14 15:15:17'),(12,'惠农推介标题12','upload/news12.jpg','upload/video.mp4',1,354,'惠农推介介绍12',1,'2023-04-14 15:15:17','2023-04-14 15:15:17'),(13,'惠农推介标题13','upload/news13.jpg','upload/video.mp4',3,166,'惠农推介介绍13',1,'2023-04-14 15:15:17','2023-04-14 15:15:17'),(14,'惠农推介标题14','upload/news14.jpg','upload/video.mp4',1,419,'惠农推介介绍14',1,'2023-04-14 15:15:17','2023-04-14 15:15:17');
 
 /*Table structure for table `xinwen_collection` */
 
@@ -228,13 +229,13 @@ DROP TABLE IF EXISTS `xinwen_collection`;
 
 CREATE TABLE `xinwen_collection` (
   `id` int(11) NOT NULL AUTO_INCREMENT COMMENT '主键',
-  `xinwen_id` int(11) DEFAULT NULL COMMENT '新闻',
+  `xinwen_id` int(11) DEFAULT NULL COMMENT '惠农推介',
   `yonghu_id` int(11) DEFAULT NULL COMMENT '用户',
   `xinwen_collection_types` int(11) DEFAULT NULL COMMENT '类型',
   `insert_time` timestamp NULL DEFAULT NULL COMMENT '收藏时间',
   `create_time` timestamp NULL DEFAULT NULL COMMENT '创建时间 show3 photoShow',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=16 DEFAULT CHARSET=utf8 COMMENT='新闻收藏';
+) ENGINE=InnoDB AUTO_INCREMENT=16 DEFAULT CHARSET=utf8 COMMENT='惠农推介收藏';
 
 /*Data for the table `xinwen_collection` */
 
@@ -246,7 +247,7 @@ DROP TABLE IF EXISTS `xinwen_liuyan`;
 
 CREATE TABLE `xinwen_liuyan` (
   `id` int(11) NOT NULL AUTO_INCREMENT COMMENT '主键',
-  `xinwen_id` int(11) DEFAULT NULL COMMENT '新闻',
+  `xinwen_id` int(11) DEFAULT NULL COMMENT '惠农推介',
   `yonghu_id` int(11) DEFAULT NULL COMMENT '用户',
   `xinwen_liuyan_text` longtext COMMENT '留言内容',
   `insert_time` timestamp NULL DEFAULT NULL COMMENT '留言时间',
@@ -254,7 +255,7 @@ CREATE TABLE `xinwen_liuyan` (
   `update_time` timestamp NULL DEFAULT NULL COMMENT '回复时间',
   `create_time` timestamp NULL DEFAULT NULL COMMENT '创建时间 show3 listShow',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=17 DEFAULT CHARSET=utf8 COMMENT='新闻留言';
+) ENGINE=InnoDB AUTO_INCREMENT=17 DEFAULT CHARSET=utf8 COMMENT='惠农推介留言';
 
 /*Data for the table `xinwen_liuyan` */
 

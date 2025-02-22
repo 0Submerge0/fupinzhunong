@@ -117,7 +117,7 @@ const routes = [{
     }
     ,{
         path: '/dictionaryXinwen',
-        name: '新闻类型',
+        name: '惠农推介类型',
         component: dictionaryXinwen
     }
     ,{
@@ -174,17 +174,17 @@ const routes = [{
       }
     ,{
         path: '/xinwen',
-        name: '新闻信息',
+        name: '惠农推介',
         component: xinwen
       }
     ,{
         path: '/xinwenCollection',
-        name: '新闻收藏',
+        name: '惠农推介收藏',
         component: xinwenCollection
       }
     ,{
         path: '/xinwenLiuyan',
-        name: '新闻留言',
+        name: '惠农推介留言',
         component: xinwenLiuyan
       }
     ,{

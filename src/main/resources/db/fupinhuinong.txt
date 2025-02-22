@@ -132,35 +132,35 @@ create table if not exists fupinzhunong.xinwen
 (
     id              int auto_increment comment '主键 '
         primary key,
-    xinwen_name     varchar(200) null comment '新闻标题  Search111 ',
-    xinwen_photo    varchar(200) null comment '新闻封面',
+    xinwen_name     varchar(200) null comment '惠农推介标题  Search111 ',
+    xinwen_photo    varchar(200) null comment '惠农推介封面',
     xinwen_video    varchar(200) null comment '视频',
-    xinwen_types    int          null comment '新闻类型 Search111',
-    xinwen_clicknum int          null comment '新闻热度',
-    xinwen_content  longtext     null comment '新闻介绍',
+    xinwen_types    int          null comment '惠农推介类型 Search111',
+    xinwen_clicknum int          null comment '惠农推介热度',
+    xinwen_content  longtext     null comment '惠农推介介绍',
     xinwen_delete   int          null comment '逻辑删除',
     insert_time     timestamp    null comment '录入时间',
     create_time     timestamp    null comment '创建时间  show1 show2 photoShow'
 )
-    comment '新闻信息' charset = utf8;
+    comment '惠农推介' charset = utf8;
 
 create table if not exists fupinzhunong.xinwen_collection
 (
     id                      int auto_increment comment '主键'
         primary key,
-    xinwen_id               int       null comment '新闻',
+    xinwen_id               int       null comment '惠农推介',
     yonghu_id               int       null comment '用户',
     xinwen_collection_types int       null comment '类型',
     insert_time             timestamp null comment '收藏时间',
     create_time             timestamp null comment '创建时间 show3 photoShow'
 )
-    comment '新闻收藏' charset = utf8;
+    comment '惠农推介收藏' charset = utf8;
 
 create table if not exists fupinzhunong.xinwen_liuyan
 (
     id                 int auto_increment comment '主键'
         primary key,
-    xinwen_id          int       null comment '新闻',
+    xinwen_id          int       null comment '惠农推介',
     yonghu_id          int       null comment '用户',
     xinwen_liuyan_text longtext  null comment '留言内容',
     insert_time        timestamp null comment '留言时间',
@@ -168,7 +168,7 @@ create table if not exists fupinzhunong.xinwen_liuyan
     update_time        timestamp null comment '回复时间',
     create_time        timestamp null comment '创建时间 show3 listShow'
 )
-    comment '新闻留言' charset = utf8;
+    comment '惠农推介留言' charset = utf8;
 
 create table if not exists fupinzhunong.yonghu
 (
@@ -204,9 +204,9 @@ INSERT INTO fupinzhunong.dictionary (id, dic_code, dic_name, code_index, index_n
 INSERT INTO fupinzhunong.dictionary (id, dic_code, dic_name, code_index, index_name, super_id, beizhu, create_time) VALUES (2, 'chat_types', '数据类型', 2, '回复', null, null, '2023-04-14 15:15:09');
 INSERT INTO fupinzhunong.dictionary (id, dic_code, dic_name, code_index, index_name, super_id, beizhu, create_time) VALUES (3, 'zhuangtai_types', '状态', 1, '未回复', null, null, '2023-04-14 15:15:09');
 INSERT INTO fupinzhunong.dictionary (id, dic_code, dic_name, code_index, index_name, super_id, beizhu, create_time) VALUES (4, 'zhuangtai_types', '状态', 2, '已回复', null, null, '2023-04-14 15:15:09');
-INSERT INTO fupinzhunong.dictionary (id, dic_code, dic_name, code_index, index_name, super_id, beizhu, create_time) VALUES (5, 'xinwen_types', '新闻类型', 1, '扶贫计划', null, null, '2023-04-14 15:15:09');
-INSERT INTO fupinzhunong.dictionary (id, dic_code, dic_name, code_index, index_name, super_id, beizhu, create_time) VALUES (6, 'xinwen_types', '新闻类型', 2, '惠农福利', null, null, '2023-04-14 15:15:09');
-INSERT INTO fupinzhunong.dictionary (id, dic_code, dic_name, code_index, index_name, super_id, beizhu, create_time) VALUES (7, 'xinwen_types', '新闻类型', 3, '表彰内容', null, null, '2023-04-14 15:15:09');
+INSERT INTO fupinzhunong.dictionary (id, dic_code, dic_name, code_index, index_name, super_id, beizhu, create_time) VALUES (5, 'xinwen_types', '惠农推介类型', 1, '扶贫计划', null, null, '2023-04-14 15:15:09');
+INSERT INTO fupinzhunong.dictionary (id, dic_code, dic_name, code_index, index_name, super_id, beizhu, create_time) VALUES (6, 'xinwen_types', '惠农推介类型', 2, '惠农福利', null, null, '2023-04-14 15:15:09');
+INSERT INTO fupinzhunong.dictionary (id, dic_code, dic_name, code_index, index_name, super_id, beizhu, create_time) VALUES (7, 'xinwen_types', '惠农推介类型', 3, '表彰内容', null, null, '2023-04-14 15:15:09');
 INSERT INTO fupinzhunong.dictionary (id, dic_code, dic_name, code_index, index_name, super_id, beizhu, create_time) VALUES (8, 'xinwen_collection_types', '收藏表类型', 1, '收藏', null, null, '2023-04-14 15:15:09');
 INSERT INTO fupinzhunong.dictionary (id, dic_code, dic_name, code_index, index_name, super_id, beizhu, create_time) VALUES (9, 'renwu_types', '任务类型', 1, '农产品类型', null, null, '2023-04-14 15:15:09');
 INSERT INTO fupinzhunong.dictionary (id, dic_code, dic_name, code_index, index_name, super_id, beizhu, create_time) VALUES (10, 'renwu_types', '任务类型', 2, '志愿者类型', null, null, '2023-04-14 15:15:09');
@@ -258,8 +258,8 @@ INSERT INTO fupinzhunong.token (id, userid, username, tablename, role, token, ad
 
 INSERT INTO fupinzhunong.users (id, username, password, role, addtime) VALUES (1, 'admin', 'admin', '管理员', '2023-04-14 15:15:09');
 
-INSERT INTO fupinzhunong.xinwen (id, xinwen_name, xinwen_photo, xinwen_video, xinwen_types, xinwen_clicknum, xinwen_content, xinwen_delete, insert_time, create_time) VALUES (1, '每日新闻', 'upload/news1.jpg', 'upload/video.mp4', 2, 254, '<p>昨日李四同志五吨小麦全部卖出，大家多多关注</p>', 1, '2023-04-14 15:15:17', '2023-04-14 15:15:17');
-INSERT INTO fupinzhunong.xinwen (id, xinwen_name, xinwen_photo, xinwen_video, xinwen_types, xinwen_clicknum, xinwen_content, xinwen_delete, insert_time, create_time) VALUES (2, '每日新闻', 'upload/news2.jpg', 'upload/video.mp4', 2, 123, '<p>今日四村农民李四，滞留五吨小麦，如有有需要的，请联系：</p><p>0000-8888-000</p>', 1, '2023-04-14 15:15:17', '2023-04-14 15:15:17');
+INSERT INTO fupinzhunong.xinwen (id, xinwen_name, xinwen_photo, xinwen_video, xinwen_types, xinwen_clicknum, xinwen_content, xinwen_delete, insert_time, create_time) VALUES (1, '每日惠农推介', 'upload/news1.jpg', 'upload/video.mp4', 2, 254, '<p>昨日李四同志五吨小麦全部卖出，大家多多关注</p>', 1, '2023-04-14 15:15:17', '2023-04-14 15:15:17');
+INSERT INTO fupinzhunong.xinwen (id, xinwen_name, xinwen_photo, xinwen_video, xinwen_types, xinwen_clicknum, xinwen_content, xinwen_delete, insert_time, create_time) VALUES (2, '每日惠农推介', 'upload/news2.jpg', 'upload/video.mp4', 2, 123, '<p>今日四村农民李四，滞留五吨小麦，如有有需要的，请联系：</p><p>0000-8888-000</p>', 1, '2023-04-14 15:15:17', '2023-04-14 15:15:17');
 INSERT INTO fupinzhunong.xinwen (id, xinwen_name, xinwen_photo, xinwen_video, xinwen_types, xinwen_clicknum, xinwen_content, xinwen_delete, insert_time, create_time) VALUES (3, '政策福利', 'upload/news3.jpg', 'upload/video.mp4', 1, 427, '<p>如果有农作物滞销的，先可以拨打以下电话进行促销，下列皆是国家企业进行高价回收滞销农产品</p><p><br></p><p>16688888888  主收西红柿</p><p>16699999999  主收土豆</p><p>16600000000  主收大蒜</p>', 1, '2023-04-14 15:15:17', '2023-04-14 15:15:17');
 INSERT INTO fupinzhunong.xinwen (id, xinwen_name, xinwen_photo, xinwen_video, xinwen_types, xinwen_clicknum, xinwen_content, xinwen_delete, insert_time, create_time) VALUES (4, '政策更改', 'upload/news4.jpg', 'upload/video.mp4', 1, 461, '<p>央视发布，现在可去各乡政府进行农作物种子的领取，更好的发展农作物</p>', 1, '2023-04-14 15:15:17', '2023-04-14 15:15:17');
 INSERT INTO fupinzhunong.xinwen (id, xinwen_name, xinwen_photo, xinwen_video, xinwen_types, xinwen_clicknum, xinwen_content, xinwen_delete, insert_time, create_time) VALUES (5, '有关助农发展政策', 'upload/news5.jpg', 'upload/video.mp4', 1, 71, '<p>先通知，种地将得到补贴，每亩地补贴xxx元，呼吁大家多多关注农产品</p>', 1, '2023-04-14 15:15:17', '2023-04-14 15:15:17');

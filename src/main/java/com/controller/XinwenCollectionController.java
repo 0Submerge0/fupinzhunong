@@ -33,7 +33,7 @@ import com.utils.R;
 import com.alibaba.fastjson.*;
 
 /**
- * 新闻收藏
+ * 惠农推介收藏
  * 后端接口
  * @author
  * @email
@@ -66,9 +66,9 @@ public class XinwenCollectionController {
     @Autowired
     private RenwuYuyueService renwuYuyueService;//任务报名
     @Autowired
-    private XinwenService xinwenService;//新闻信息
+    private XinwenService xinwenService;//惠农推介
     @Autowired
-    private XinwenLiuyanService xinwenLiuyanService;//新闻留言
+    private XinwenLiuyanService xinwenLiuyanService;//惠农推介留言
     @Autowired
     private YonghuService yonghuService;//用户
     @Autowired
@@ -109,7 +109,7 @@ public class XinwenCollectionController {
             //entity转view
             XinwenCollectionView view = new XinwenCollectionView();
             BeanUtils.copyProperties( xinwenCollection , view );//把实体数据重构到view中
-            //级联表 新闻信息
+            //级联表 惠农推介
             //级联表
             XinwenEntity xinwen = xinwenService.selectById(xinwenCollection.getXinwenId());
             if(xinwen != null){
@@ -227,7 +227,7 @@ public class XinwenCollectionController {
                         for(List<String> data:dataList){
                             //循环
                             XinwenCollectionEntity xinwenCollectionEntity = new XinwenCollectionEntity();
-//                            xinwenCollectionEntity.setXinwenId(Integer.valueOf(data.get(0)));   //新闻 要改的
+//                            xinwenCollectionEntity.setXinwenId(Integer.valueOf(data.get(0)));   //惠农推介 要改的
 //                            xinwenCollectionEntity.setYonghuId(Integer.valueOf(data.get(0)));   //用户 要改的
 //                            xinwenCollectionEntity.setXinwenCollectionTypes(Integer.valueOf(data.get(0)));   //类型 要改的
 //                            xinwenCollectionEntity.setInsertTime(date);//时间
