@@ -326,7 +326,7 @@
         border-width: 7px;
         border-style: solid;
         border-color: var(--publicMainColor);
-        background-color: var(--publicSubColor);
+        background-color: var(--publicMainColor);
         box-shadow: 0 0 0px rgba(0,0,0,0);
     }
     }

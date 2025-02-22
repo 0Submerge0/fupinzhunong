@@ -1,9 +1,9 @@
 /*定义全局css*/
 body {
 	/* 1 全局公共主颜色 */
-	--publicMainColor: #5aa7a7;
+	--publicMainColor: #87CEFA;
 	/* 1 全局公共副颜色 */
-	--publicSubColor:  #a7d676;
+	--publicSubColor:  #a0e4ff;
 }
 .bodyClass{
 	background-image: linear-gradient(320deg,var(--publicMainColor),var(--publicSubColor));
