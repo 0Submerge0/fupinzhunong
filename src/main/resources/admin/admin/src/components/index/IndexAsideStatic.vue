@@ -272,8 +272,7 @@ export default {
     height: auto !important;
   }
   .menulist-item {
-    width: 200px;
-    padding: 15px 20px;
+    width: 250px;
     margin: 0;
     border-radius: 0;
     border-width: 0 !important;

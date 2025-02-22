@@ -591,15 +591,15 @@
                     })
                     // 返回
                     document.querySelectorAll('.addEdit-block .btn .btn-close').forEach(el=>{
-                        el.style.width = this.addEditForm.btnCancelWidth
-                        el.style.height = this.addEditForm.btnCancelHeight
-                        el.style.color = this.addEditForm.btnCancelFontColor
-                        el.style.fontSize = this.addEditForm.btnCancelFontSize
-                        el.style.borderWidth = this.addEditForm.btnCancelBorderWidth
-                        el.style.borderStyle = this.addEditForm.btnCancelBorderStyle
-                        el.style.borderColor = this.addEditForm.btnCancelBorderColor
-                        el.style.borderRadius = this.addEditForm.btnCancelBorderRadius
-                        el.style.backgroundColor = this.addEditForm.btnCancelBgColor
+                        // el.style.width = this.addEditForm.btnCancelWidth
+                        // el.style.height = this.addEditForm.btnCancelHeight
+                        // el.style.color = this.addEditForm.btnCancelFontColor
+                        // el.style.fontSize = this.addEditForm.btnCancelFontSize
+                        // el.style.borderWidth = this.addEditForm.btnCancelBorderWidth
+                        // el.style.borderStyle = this.addEditForm.btnCancelBorderStyle
+                        // el.style.borderColor = this.addEditForm.btnCancelBorderColor
+                        // el.style.borderRadius = this.addEditForm.btnCancelBorderRadius
+                        // el.style.backgroundColor = this.addEditForm.btnCancelBgColor
                     })
                 })
             },
