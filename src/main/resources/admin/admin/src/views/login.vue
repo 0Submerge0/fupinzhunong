@@ -4,7 +4,7 @@
 
             <div :class="1 == 1 ? 'left' : 1 == 2 ? 'left center' : 'left right'">
                 <el-form class="login-form" label-position="left" :label-width="1 == 3 || 1 == 2 ? '30px': '0px'">
-                    <div class="title-container"><h3 class="title">扶贫惠农推介系统登录</h3></div>
+                    <div class="title-container"><h3 class="title">扶贫助农系统登录</h3></div>
                     <el-form-item :style='{"padding":"0","boxShadow":"0 0 6px rgba(0,0,0,0)","margin":"0 auto 12px","borderColor":"rgba(0,0,0,0)","backgroundColor":"rgba(255, 255, 255, 0)","borderRadius":"10px","borderWidth":"0","width":"65%","borderStyle":"solid","height":"auto"}' :label="1 == 3 ? '用户名' : ''" :class="'style'+1">
             <span v-if="1 != 3" class="svg-container" style="
 			color:#333;

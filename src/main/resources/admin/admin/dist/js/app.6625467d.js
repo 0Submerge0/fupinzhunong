@@ -997,7 +997,7 @@
                 return t("div", [t("div", {staticClass: "container loginIn"}, [t("div", {class: "left"}, [t("el-form", {
                     staticClass: "login-form",
                     attrs: {"label-position": "left", "label-width": "0px"}
-                }, [t("div", {staticClass: "title-container"}, [t("h3", {staticClass: "title"}, [e._v("扶贫惠农推介系统登录")])]), t("el-form-item", {
+                }, [t("div", {staticClass: "title-container"}, [t("h3", {staticClass: "title"}, [e._v("扶贫助农系统登录")])]), t("el-form-item", {
                     class: "style1",
                     style: {
                         padding: "0",
@@ -1461,7 +1461,7 @@
                 return t("div", [t("div", {staticClass: "container"}, [t("div", {staticClass: "login-form"}, [t("h1", {
                     staticClass: "h1",
                     staticStyle: {color: "#000", fontSize: "28px"}
-                }, [e._v("扶贫惠农推介系统注册")]), t("el-form", {staticClass: "rgs-form"}, [t("el-form-item", {
+                }, [e._v("扶贫助农系统注册")]), t("el-form", {staticClass: "rgs-form"}, [t("el-form-item", {
                     staticClass: "input",
                     attrs: {label: "账号"}
                 }, [t("el-input", {
@@ -18109,7 +18109,7 @@
                         indexUrl: "http://localhost:8080/fupinzhunong/front/index.html"
                     }
                 }, getProjectName: function () {
-                    return {projectName: "扶贫惠农推介系统"}
+                    return {projectName: "扶贫助农系统"}
                 }
             }, Fa = ga, Sa = function () {
                 var e = this, t = e._self._c;

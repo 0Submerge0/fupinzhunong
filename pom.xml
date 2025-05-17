@@ -13,7 +13,7 @@
     <artifactId>fupinzhunong</artifactId>
     <version>0.0.1-SNAPSHOT</version>
     <name>fupinzhunong</name>
-    <description>扶贫惠农推介系统</description>
+    <description>扶贫助农系统</description>
 
     <properties>
         <java.version>1.8</java.version>
