@@ -294,7 +294,7 @@
                     <div v-for="(item,index) in dataList" :key="index" class="list-item4B list-item5"
                          style="margin: 10px;text-align: center">
                         <div @click="jump('../renwu/detail.html?id='+item.id)" class="list-item-body animation-box"
-                             :style='{"padding":"10px","boxShadow":"0px 0px 0px 10px var(--publicMainColor)","margin":"10px","borderColor":"var(--publicMainColor)","backgroundColor":"#fff","borderRadius":"50%","borderWidth":"0","borderStyle":"solid"}'>
+                             :style='{"padding":"10px","boxShadow":"0px 0px 0px 10px var(--publicMainColor)","margin":"10px","borderColor":"var(--publicMainColor)","backgroundColor":"#fff","borderRadius":"0","borderWidth":"0","borderStyle":"solid"}'>
                             <img :style='{"boxShadow":"0 0 0px rgba(77, 79, 54,.8)","borderColor":"rgba(0,0,0,.3)","borderRadius":"50% ","borderWidth":"0","width":"180px","borderStyle":"solid","height":"180px"}'
                                  :src="item.renwuPhoto?baseUrl+item.renwuPhoto.split(',')[0]:''">
                             <div class="info">

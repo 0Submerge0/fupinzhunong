@@ -1,4 +1,4 @@
-var projectName = '扶贫助农系统';
+var projectName = '扶贫惠农推介系统';
 /**
  * 轮播图配置
  */

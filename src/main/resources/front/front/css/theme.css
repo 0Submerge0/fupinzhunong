@@ -205,8 +205,8 @@ body {
 
 /*鼠标移入样式 开始*/
 .animation-box:hover {
-    transform: perspective(5000px) translate3d(20px, 0px, 0px) scale(1.0) rotate(0deg) skew(10deg,0deg);
-    transition: all 0.5s;
+    /*transform: perspective(5000px) translate3d(20px, 0px, 0px) scale(1.0) rotate(0deg) skew(10deg,0deg);*/
+    /*transition: all 0.5s;*/
 }/*鼠标移入样式 结束*/
 
 

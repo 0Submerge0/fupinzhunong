@@ -51,7 +51,7 @@
                     </el-form-item>
                     <div v-else>
                         <el-form-item v-if="ruleForm.xinwenVideo" label="视频" prop="xinwenVideo">
-                            <video :src="$base.url+ruleForm.xinwenVideo" width="100" height="100" controls="controls">
+                            <video :src="$base.url+ruleForm.xinwenVideo" :poster="$base.url+ruleForm.xinwenPhoto" width="100" height="100" controls="controls" preload="auto">
                             </video>
                         </el-form-item>
                     </div>

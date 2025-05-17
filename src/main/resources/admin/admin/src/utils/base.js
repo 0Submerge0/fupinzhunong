@@ -9,7 +9,7 @@ const base = {
     },
     getProjectName(){
         return {
-            projectName: "扶贫助农系统"
+            projectName: "扶贫惠农推介系统"
         } 
     }
 }
